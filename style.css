@@ -1,107 +1,126 @@
-/* ตั้งค่าพื้นฐาน */
 * {
     box-sizing: border-box;
 }
 
 body {
+    font-family: 'Chakra Petch', sans-serif;
     margin: 0;
     padding: 0;
     font-family: 'Kanit', sans-serif;
     background-color: #f5f5f5;
 }
 
+
+/* หรือถ้าอยากใช้แค่หัวข้อ (แนะนำแบบนี้) */
+
+h1,
+h2,
+h3,
+.menu-list li a,
+.btn-register {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+
 /* --- Navbar Container หลัก --- */
+
 .navbar {
     display: flex;
     width: 100%;
     height: 70px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* [เพิ่มบรรทัดนี้] เทสีดำรองพื้นทั้งแถบ เพื่อปิดช่องว่างสีขาวตรงรอยต่อครับ */
-    background-color: #1a1a1a; 
+    background-color: #1a1a1a;
 }
 
+
 /* --- แก้ไขในไฟล์ style.css --- */
+
 .nav-left {
     position: relative;
     display: flex;
     align-items: center;
-    height: 100%; 
+    height: 100%;
     background-color: transparent !important;
-    min-width: 500px; 
-    
+    min-width: 500px;
     /* [แก้ตรงนี้] เพิ่มตัวเลขเพื่อดันโลโก้ไปทางขวาครับ */
     /* จากเดิม 30px ลองเปลี่ยนเป็น 60px, 80px หรือ 100px จนกว่าจะพอใจ */
-    padding-left: 80px;  
-    
+    padding-left: 80px;
     padding-right: 80px;
     margin-right: 20px;
     z-index: 10;
 }
 
+
 /* --- แก้ไขในไฟล์ style.css --- */
+
 .nav-left::before {
     content: "";
     position: absolute;
     top: 0;
-    left: -50px; 
-    width: 100%; 
+    left: -50px;
+    width: 100%;
     height: 100%;
-    
     /* [แก้ตรงนี้] เปลี่ยนเป็นสีแดงเบอร์นี้ครับ เพื่อให้สูตร Blend ทำงานได้ */
-    background: #8B1E1E; 
-    
+    background: #8B1E1E;
     /* ส่วนอื่นเหมือนเดิม */
     transform: skewX(-30deg);
     transform-origin: top left;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
     z-index: -1;
 }
 
+
 /* --- แก้ไขในไฟล์ style.css --- */
+
 .logo-img {
-    height: 55px; 
+    height: 55px;
     width: auto;
     display: block;
     filter: none;
-    
     /* [เพิ่มบรรทัดนี้] ทีเด็ดครับ! มันจะลบกรอบสีเข้มออก แล้วเอาสีแดง #8B1E1E มาถมแทน */
-    mix-blend-mode: lighten; 
+    mix-blend-mode: lighten;
 }
-    
+
 
 /* --- ฝั่งขวา: พื้นหลังดำ (คงเดิม) --- */
+
 .nav-right {
     background-color: #1a1a1a;
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-end; 
-    padding-right: 40px; 
-    gap: 30px; 
+    justify-content: flex-end;
+    padding-right: 40px;
+    gap: 30px;
 }
 
+
 /* เมนูลิงก์ */
+
 .menu-list {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 25px; 
+    gap: 25px;
 }
 
 .menu-list li a {
     text-decoration: none;
-    color: #e0e0e0; 
+    color: #e0e0e0;
     font-size: 15px;
     font-weight: 400;
     transition: 0.3s;
 }
 
 .menu-list li a:hover {
-    color: #fff; 
+    color: #fff;
 }
 
+
 /* กลุ่มปุ่มขวาสุด */
+
 .action-group {
     display: flex;
     align-items: center;
@@ -113,127 +132,1552 @@ body {
     font-size: 18px;
 }
 
+
 /* --- [แก้ไข] กล่องครอบปุ่มเปลี่ยนภาษา --- */
+
 .lang-switcher {
     display: flex;
     align-items: center;
-    gap: 12px; /* เพิ่มระยะห่างระหว่างธงให้ดูสบายตา */
-    background: rgba(255,255,255,0.1); 
-    padding: 6px 15px; /* เพิ่มพื้นที่ภายในกรอบ */
-    border-radius: 30px; /* ปรับให้โค้งมนรับกับปุ่มสมัคร */
-    border: 1px solid rgba(255,255,255,0.15);
+    gap: 12px;
+    /* เพิ่มระยะห่างระหว่างธงให้ดูสบายตา */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 6px 15px;
+    /* เพิ่มพื้นที่ภายในกรอบ */
+    border-radius: 30px;
+    /* ปรับให้โค้งมนรับกับปุ่มสมัคร */
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+
 /* --- [แก้ไข] ขนาดรูปธง --- */
+
 .lang-flag img {
-    width: 20px; /* ขยายขนาดธงให้ใหญ่ขึ้น (เดิม 24px) */
+    width: 20px;
+    /* ขยายขนาดธงให้ใหญ่ขึ้น (เดิม 24px) */
     height: auto;
-    border-radius: 3px; 
+    border-radius: 3px;
     transition: transform 0.2s, filter 0.2s;
-    filter: grayscale(100%) opacity(0.7); /* ธงที่ไม่เลือกให้เป็นสีเทาและจางลง */
+    filter: grayscale(100%) opacity(0.7);
+    /* ธงที่ไม่เลือกให้เป็นสีเทาและจางลง */
     display: block;
 }
 
+
 /* สถานะ Active หรือ Hover */
-.lang-flag.active img, 
+
+.lang-flag.active img,
 .lang-flag:hover img {
-    filter: grayscale(0%) opacity(1); /* คืนสีสดใส */
-    transform: scale(1.15); /* ขยายใหญ่ขึ้นเมื่อชี้ */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* เพิ่มเงาให้ดูมีมิติ */
+    filter: grayscale(0%) opacity(1);
+    /* คืนสีสดใส */
+    transform: scale(1.15);
+    /* ขยายใหญ่ขึ้นเมื่อชี้ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    /* เพิ่มเงาให้ดูมีมิติ */
 }
 
+
 /* --- [แก้ไข] ปุ่มสมัครคอร์ส (สีแดง) --- */
+
 .btn-register {
     /* ไล่สีแดง: บนสว่าง ล่างเข้ม (ดูพรีเมียม) */
     background: linear-gradient(180deg, #d32f2f 0%, #9a0007 100%);
-    
-    color: #fff; /* ตัวหนังสือสีขาว */
+    color: #fff;
+    /* ตัวหนังสือสีขาว */
     text-decoration: none;
-    padding: 8px 25px; /* เพิ่มความกว้างปุ่ม */
+    padding: 8px 25px;
+    /* เพิ่มความกว้างปุ่ม */
     border-radius: 50px;
-    font-weight: 500; /* ลดความหนาตัวอักษรลงนิดนึงให้ดูโมเดิร์น */
+    font-weight: 500;
+    /* ลดความหนาตัวอักษรลงนิดนึงให้ดูโมเดิร์น */
     font-size: 15px;
     letter-spacing: 0.5px;
-    
     /* ใส่เงาแดงเรืองแสง */
     box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* ขอบขาวจางๆ เพิ่มมิติ */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* ขอบขาวจางๆ เพิ่มมิติ */
     transition: all 0.3s ease;
 }
 
+
 /* เอฟเฟกต์ตอนชี้เมาส์ */
+
 .btn-register:hover {
     /* เปลี่ยนสีให้สว่างขึ้น */
     background: linear-gradient(180deg, #f44336 0%, #c62828 100%);
-    transform: translateY(-2px); /* ลอยขึ้น */
-    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6); /* เงาเข้มขึ้น */
+    transform: translateY(-2px);
+    /* ลอยขึ้น */
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
+    /* เงาเข้มขึ้น */
 }
 
+
 /* Responsive */
+
 @media (max-width: 900px) {
     .menu-list {
-        display: none; 
+        display: none;
     }
 }
 
+
 /* --- [แก้ไข] เมนูลิงก์ พร้อมลูกเล่นเส้นขีดวิ่ง --- */
+
 .menu-list li a {
     text-decoration: none;
     color: #e0e0e0;
     font-size: 15px;
     font-weight: 400;
     transition: 0.3s;
-    position: relative; /* สำคัญ! ใช้สำหรับจัดตำแหน่งเส้นขีด */
-    padding-bottom: 5px; /* เว้นที่ให้เส้นขีด */
+    position: relative;
+    /* สำคัญ! ใช้สำหรับจัดตำแหน่งเส้นขีด */
+    padding-bottom: 5px;
+    /* เว้นที่ให้เส้นขีด */
 }
 
+
 /* สร้างเส้นขีดที่ซ่อนอยู่ */
+
 .menu-list li a::after {
     content: '';
     position: absolute;
-    width: 0; /* เริ่มต้นความกว้างเป็น 0 (มองไม่เห็น) */
+    width: 0;
+    /* เริ่มต้นความกว้างเป็น 0 (มองไม่เห็น) */
     height: 2px;
     bottom: 0;
     left: 50%;
-    background-color: #FF4500; /* สีเส้นขีด (สีส้มแดง หรือเปลี่ยนเป็นขาวก็ได้) */
-    transition: all 0.3s ease-in-out; /* เอฟเฟกต์ค่อยๆ วิ่ง */
-    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* เพิ่มแสงโกลว์ให้เส้น */
+    background-color: #FF4500;
+    /* สีเส้นขีด (สีส้มแดง หรือเปลี่ยนเป็นขาวก็ได้) */
+    transition: all 0.3s ease-in-out;
+    /* เอฟเฟกต์ค่อยๆ วิ่ง */
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    /* เพิ่มแสงโกลว์ให้เส้น */
 }
 
+
 /* เมื่อเอาเมาส์ชี้ */
+
 .menu-list li a:hover {
     color: #fff;
-    text-shadow: 0 0 5px rgba(255,255,255,0.5); /* ตัวหนังสือเรืองแสงนิดๆ */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    /* ตัวหนังสือเรืองแสงนิดๆ */
 }
 
 .menu-list li a:hover::after {
-    width: 100%; /* ขยายความกว้างเต็ม 100% */
-    left: 0; /* ขยายจากตรงกลางออกไปริม */
+    width: 100%;
+    /* ขยายความกว้างเต็ม 100% */
+    left: 0;
+    /* ขยายจากตรงกลางออกไปริม */
 }
 
-/* --- [เพิ่มใหม่] ตั้งค่าพื้นหลังสไลด์โชว์ --- */
+
+/* --- [แก้ไขใหม่] ตั้งค่าพื้นหลังสไลด์โชว์ --- */
+
 .bg-slider {
-    position: fixed; /* ยึดติดหน้าจอไม่ให้ขยับ */
+    position: relative;
+    /* เปลี่ยนจาก fixed เป็น relative เพื่อให้เลื่อนได้ */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* เต็มความสูงจอ */
-    z-index: -1; /* ส่งไปอยู่ชั้นหลังสุด (หลัง Navbar) */
-    background-color: #000; /* สีรองพื้นกันรูปไม่โหลด */
+    /* ปรับความสูงให้เหมาะสม: ลองใช้ 85vh (85% ของความสูงจอ) */
+    height: 90vh;
+    /* ให้ความสูงลดลงเหลือ 85% ของ Viewport Height (vh) */
+    z-index: -1;
+    /* ส่งไปอยู่ชั้นหลังสุด */
+    background-color: #000;
 }
 
 .slide {
-    position: absolute; /* ให้รูปซ้อนทับกันที่ตำแหน่งเดิม */
+    position: absolute;
+    /* ให้รูปซ้อนทับกันที่ตำแหน่งเดิม */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* บังคับรูปให้เต็มจอโดยสัดส่วนไม่เพี้ยน */
-    opacity: 0; /* ซ่อนรูปไว้ก่อน */
-    transition: opacity 2s ease-in-out; /* เอฟเฟกต์ตอนเปลี่ยนรูป (Fade) */
+    /* ให้รูปเต็มความสูง 100% ของ .bg-slider (85vh) ที่เรากำหนดไว้ */
+    object-fit: cover;
+    /* บังคับรูปให้เต็มพื้นที่โดยสัดส่วนไม่เพี้ยน */
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 
+
 /* คลาสนี้จะถูกใส่โดย JavaScript เพื่อโชว์รูป */
+
 .slide.active {
-    opacity: 1; /* แสดงรูป */
+    opacity: 1;
+    /* แสดงรูป */
+}
+
+
+/* ========================================= */
+
+
+/* [แก้ไขล่าสุด] เสาสั้นลง + พุ่มไม้แน่นขึ้น + จัดระยะเป๊ะ */
+
+
+/* ========================================= */
+
+.bts-zone {
+    position: relative;
+    width: 100%;
+    /* ลดความสูงรวมลง เพราะเสาสั้นลงแล้ว (เดิม 225px) */
+    height: 180px;
+    z-index: 10;
+    pointer-events: none;
+    overflow: hidden;
+    background-color: #e0feff;
+    /* ปรับขอบบนให้ชนกับรูปภาพด้านบนพอดี */
+    margin-top: 0px;
+}
+
+
+/* 1. สร้าง "ตอม่อ" (เสา) - [แก้ไข] ลดความสูงลง */
+
+.structure-pillars {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* [แก้ตรงนี้] ลดความสูงจาก 122px เหลือ 70px */
+    height: 70px;
+    /* ปรับลายเสา: สั้นลงและถี่ขึ้นเล็กน้อย */
+    background-image: linear-gradient(to right, transparent 20px, #9ea6b0 20px, #9ea6b0 55px, transparent 55px);
+    background-size: 200px 100%;
+    z-index: 1;
+}
+
+
+/* 2. สร้าง "พุ่มไม้" - [แก้ไข] ให้พุ่มแน่นขึ้น ระยะชิดขึ้น */
+
+.bushes-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* ลดความสูงพุ่มไม้ลงนิดหน่อยให้สมดุลกับเสา */
+    height: 45px;
+    z-index: 2;
+}
+
+.bushes-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ปรับวงกลมพุ่มไม้ให้ดูแน่นและมีมิติ */
+    background-image: radial-gradient(circle at 20px 30px, #2e7d32 20px, transparent 21px), radial-gradient(circle at 50px 20px, #388e3c 28px, transparent 29px), radial-gradient(circle at 85px 35px, #4caf50 18px, transparent 19px), radial-gradient(circle at 120px 25px, #2e7d32 25px, transparent 26px);
+    background-repeat: repeat-x;
+    /* [แก้ตรงนี้] ลดระยะห่างการซ้ำจาก 200px เหลือ 130px (พุ่มไม้จะดูแน่นขึ้น ไม่กว้างเกิน) */
+    background-size: 130px 100%;
+}
+
+
+/* 3. สร้าง "คานราง" - [แก้ไข] ขยับลงมาวางบนหัวเสาใหม่ */
+
+.structure-rail {
+    position: absolute;
+    /* วางทับเสาที่สูง 70px */
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    /* ความหนารางเท่าเดิม */
+    background-color: #cbd3dc;
+    border-top: 6px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+}
+
+
+/* 4. ส่วนควบคุมรถวิ่ง - [แก้ไข] ขยับลงตามราง */
+
+.train-wrapper {
+    position: absolute;
+    /* คำนวณ: เสา(70) + ราง(35) - ส่วนล้อนิดหน่อย(15) = 90px */
+    bottom: 90px;
+    left: 100%;
+    z-index: 4;
+    width: auto;
+    animation: moveTrainFixed 5s linear infinite;
+}
+
+
+/* ตัวรูปรถ (ขนาดเท่าเดิมตามที่ชอบ) */
+
+.bts-train-body {
+    height: 90px;
+    width: auto;
+    display: block;
+}
+
+
+/* อนิเมชั่นวิ่ง */
+
+@keyframes moveTrainFixed {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-150vw);
+    }
+}
+
+
+/* Responsive มือถือ (ปรับให้เข้ากับเสาใหม่) */
+
+@media (max-width: 768px) {
+    .bts-zone {
+        height: 120px;
+        margin-top: 0;
+    }
+    .structure-pillars {
+        height: 50px;
+        /* ลดเสาในมือถือ */
+        background-size: 100px 100%;
+    }
+    .bushes-container {
+        height: 35px;
+    }
+    .bushes-container::after {
+        background-size: 80px 100%;
+    }
+    .structure-rail {
+        bottom: 50px;
+        height: 25px;
+    }
+    .train-wrapper {
+        bottom: 65px;
+    }
+    .bts-train-body {
+        height: 45px;
+    }
+}
+
+
+/* ========================================= */
+
+
+/* [แก้ไขสมบูรณ์] ปลดล็อกให้ป้ายทะลุขึ้นไปทับรูปได้ */
+
+
+/* ========================================= */
+
+.bts-zone {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    z-index: 10;
+    pointer-events: none;
+    background-color: #ffffff;
+    margin-top: 0px;
+    /* [จุดสำคัญที่สุด!] เปลี่ยนจาก hidden เป็น visible */
+    /* เพื่อยอมให้ป้ายสถานี ทะลุกรอบออกไปทับรูปด้านบนได้ */
+    overflow: visible;
+}
+
+
+/* 1. สร้าง "ตอม่อ" (เสา) - คงเดิมที่คุณชอบแล้ว */
+
+.structure-pillars {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-image: linear-gradient(to right, transparent 20px, #9ea6b0 20px, #9ea6b0 55px, transparent 55px);
+    background-size: 200px 100%;
+    z-index: 1;
+}
+
+
+/* 2. สร้าง "พุ่มไม้" - คงเดิม */
+
+.bushes-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    z-index: 2;
+}
+
+.bushes-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 20px 30px, #2e7d32 20px, transparent 21px), radial-gradient(circle at 50px 20px, #388e3c 28px, transparent 29px), radial-gradient(circle at 85px 35px, #4caf50 18px, transparent 19px), radial-gradient(circle at 120px 25px, #2e7d32 25px, transparent 26px);
+    background-repeat: repeat-x;
+    background-size: 130px 100%;
+}
+
+
+/* 3. สร้าง "คานราง" - คงเดิม */
+
+.structure-rail {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #cbd3dc;
+    border-top: 6px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+}
+
+
+/* 4. ส่วนควบคุมรถวิ่ง - คงเดิม */
+
+
+/* ------------------------------------------------ */
+
+
+/* [แก้ไขล่าสุด] รถไฟฟ้าวิ่งมาชะลอจอด - รอ - แล้วไปต่อ */
+
+
+/* ------------------------------------------------ */
+
+
+/* 1. แก้ไขส่วนตั้งค่าการเคลื่อนไหวของรถ */
+
+.train-wrapper {
+    position: absolute;
+    /* จัดตำแหน่งรถให้ล้ออยู่บนรางพอดี (ตามที่เคยตั้งค่าไว้) */
+    bottom: 85px;
+    left: 100%;
+    /* เริ่มต้นนอกจอขวา */
+    z-index: 4;
+    /* บังป้ายสถานี */
+    width: auto;
+    /* [จุดสำคัญ] เปลี่ยนชื่อ Animation และเพิ่มเวลาเป็น 25 วินาที */
+    /* เพื่อให้มีเวลาวิ่ง, เวลาเบรก, และเวลาจอดรอ */
+    animation: moveTrainStopGo 10s infinite;
+}
+
+
+/* 2. สร้าง Keyframes ใหม่ สำหรับการจอด */
+
+@keyframes moveTrainStopGo {
+    /* ----------------------------------- */
+    /* ช่วงที่ 1: วิ่งจากขวาเข้ามา แล้ว "ชะลอ" จอด */
+    /* ----------------------------------- */
+    0% {
+        transform: translateX(0);
+        /* เริ่มที่ขอบขวา */
+        animation-timing-function: ease-out;
+        /* สั่งให้ค่อยๆ ช้าลงตอนปลาย */
+    }
+    35% {
+        /* วิ่งมาหยุดที่ตำแหน่งหน้าป้ายสถานี (ประมาณ 82% ของความกว้างจอ) */
+        /* ค่านี้จะทำให้หัวรถวิ่งเลยป้ายไปนิดนึง เหมือนจอดตรงชานชาลาพอดี */
+        transform: translateX(-82vw);
+        animation-timing-function: linear;
+        /* เตรียมหยุดนิ่ง */
+    }
+    /* ----------------------------------- */
+    /* ช่วงที่ 2: "จอดนิ่งๆ" รอรับผู้โดยสาร */
+    /* ----------------------------------- */
+    60% {
+        /* ค่าต้องเท่ากับตอน 35% เพื่อให้รถหยุดอยู่กับที่ */
+        transform: translateX(-82vw);
+        animation-timing-function: ease-in;
+        /* สั่งให้ค่อยๆ เร่งเครื่องออกไป */
+    }
+    /* ----------------------------------- */
+    /* ช่วงที่ 3: "ออกตัว" วิ่งออกไปทางซ้าย */
+    /* ----------------------------------- */
+    100% {
+        /* วิ่งเลยออกไปไกลๆ ให้พ้นจอแน่นอน */
+        transform: translateX(-250vw);
+    }
+}
+
+
+/* ========================================= */
+
+
+/* [ป้ายสถานี] แก้ไขให้สูงขึ้นและทะลุกรอบ */
+
+
+/* ========================================= */
+
+.station-sign {
+    position: absolute;
+    left: 10%;
+    /* วางจุดเริ่มที่ระดับรางพอดี */
+    bottom: 105px;
+    z-index: 3;
+    /* อยู่หลังรถ แต่อยู่หน้าราง */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* [ปรับเพิ่ม] ดันป้ายขึ้นไปอีก 55px เพื่อให้กินพื้นที่รูปด้านบน */
+    padding-bottom: 55px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+    /* เพิ่มเงาฟุ้งๆ ให้ป้ายเด่นออกมาจากรูป */
+}
+
+
+/* เสาป้าย */
+
+.sign-pole {
+    position: absolute;
+    bottom: 0;
+    /* เริ่มต้นที่ราง */
+    width: 6px;
+    /* [ปรับเพิ่ม] ยืดเสาให้สูงขึ้นรับกับป้ายที่ดันขึ้นไป */
+    height: 75px;
+    background-color: #d1d6db;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #999;
+    z-index: -1;
+}
+
+.sign-pole.left {
+    left: 25px;
+}
+
+
+/* ขยับเสาออกข้างอีกนิดให้สมดุล */
+
+.sign-pole.right {
+    right: 25px;
+}
+
+
+/* แป้นยึดฐานเสา */
+
+.sign-pole::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    width: 14px;
+    height: 4px;
+    background-color: #546e7a;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ตัวกระดานป้าย */
+
+.sign-board {
+    position: relative;
+    background-color: #001548;
+    width: 150px;
+    /* ขยายความกว้างป้ายอีกนิด */
+    height: 65px;
+    border-radius: 12px;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    /* เพิ่มเงาในตัวป้าย */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ชื่อสถานี */
+
+.sign-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.sign-info .th {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.sign-info .en {
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+
+/* รหัสสถานี */
+
+.sign-code {
+    width: 36px;
+    height: 36px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #001548;
+}
+
+.sign-code span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* Responsive มือถือ */
+
+@media (max-width: 768px) {
+    .bts-zone {
+        height: 120px;
+        overflow: visible;
+    }
+    .structure-pillars {
+        height: 50px;
+        background-size: 100px 100%;
+    }
+    .bushes-container {
+        height: 35px;
+    }
+    .bushes-container::after {
+        background-size: 80px 100%;
+    }
+    .structure-rail {
+        bottom: 50px;
+        height: 25px;
+    }
+    .train-wrapper {
+        bottom: 65px;
+    }
+    .bts-train-body {
+        height: 45px;
+    }
+    /* ปรับป้ายในมือถือ */
+    .station-sign {
+        left: 5%;
+        bottom: 75px;
+        padding-bottom: 35px;
+        /* ดันขึ้นน้อยลงในมือถือ */
+    }
+    .sign-pole {
+        height: 45px;
+        width: 4px;
+    }
+    .sign-pole.left {
+        left: 18px;
+    }
+    .sign-pole.right {
+        right: 18px;
+    }
+    .sign-board {
+        width: 110px;
+        height: 45px;
+        padding: 0 10px;
+    }
+    .sign-info .th {
+        font-size: 14px;
+    }
+    .sign-info .en {
+        font-size: 8px;
+    }
+    .sign-code {
+        width: 26px;
+        height: 26px;
+    }
+    .sign-code span {
+        font-size: 9px;
+    }
+}
+
+
+/* ========================================= */
+
+
+/* [แก้ไขล่าสุด] ป้ายสถานี (เสาตั้งบนราง + มีแป้นยึดสวยๆ) */
+
+
+/* ========================================= */
+
+.station-sign {
+    position: absolute;
+    /* ปรับตำแหน่งซ้าย-ขวาได้ที่นี่ */
+    left: 10%;
+    /* [จุดสำคัญ 1] วางกล่องป้ายที่ความสูง 105px (เท่ากับความสูงรางพอดี) */
+    bottom: 105px;
+    z-index: 3;
+    /* อยู่หน้าราง แต่อยู่หลังรถ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* [จุดสำคัญ 2] ดันตัวป้ายขึ้นไปข้างบน 30px เพื่อให้มีที่ว่างใส่เสา */
+    padding-bottom: 30px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+
+/* 1. เสาป้าย (ขาตั้ง) */
+
+.sign-pole {
+    position: absolute;
+    /* [จุดสำคัญ 3] ให้โคนเสาเริ่มที่ 0 (คือบนหลังรางพอดี ไม่จมลงไป) */
+    bottom: 0;
+    width: 6px;
+    /* ความสูงเสา ให้สูงขึ้นไปรับกับตัวป้าย */
+    height: 45px;
+    background-color: #d1d6db;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #999;
+    z-index: -1;
+}
+
+.sign-pole.left {
+    left: 20px;
+}
+
+.sign-pole.right {
+    right: 20px;
+}
+
+
+/* [ใหม่] แป้นเหล็กยึดฐานเสา (Foot Plate) */
+
+.sign-pole::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    /* จัดกึ่งกลางให้แป้นกว้างกว่าเสา */
+    width: 14px;
+    /* ความกว้างแป้น */
+    height: 3px;
+    /* ความหนาแป้น */
+    background-color: #546e7a;
+    /* สีเหล็กเข้มๆ ดูแข็งแรง */
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    /* เงาใต้แป้น */
+}
+
+
+/* 2. ตัวกระดานป้าย (คงเดิม) */
+
+.sign-board {
+    position: relative;
+    background-color: #001548;
+    width: 140px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    /* เพิ่มเงาในตัวป้ายนิดหน่อย */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 3. ส่วนชื่อสถานี */
+
+.sign-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.sign-info .th {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sign-info .en {
+    font-size: 10px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+
+/* 4. ส่วนรหัสสถานี */
+
+.sign-code {
+    width: 34px;
+    height: 34px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #001548;
+}
+
+.sign-code span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+/* ========================================= */
+
+
+/* Responsive มือถือ (ปรับตำแหน่งให้เสาอยู่บนรางเช่นกัน) */
+
+
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .station-sign {
+        left: 5%;
+        /* ในมือถือ รางสูง 50+25 = 75px */
+        bottom: 75px;
+        padding-bottom: 20px;
+        /* ลดความสูงเสาในมือถือ */
+    }
+    .sign-pole {
+        height: 30px;
+        bottom: 0;
+        /* วางบนราง */
+        width: 4px;
+    }
+    .sign-pole::after {
+        width: 10px;
+        height: 2px;
+        left: -3px;
+    }
+    .sign-board {
+        width: 100px;
+        height: 42px;
+        padding: 0 8px;
+    }
+    .sign-info .th {
+        font-size: 13px;
+    }
+    .sign-info .en {
+        font-size: 7px;
+    }
+    .sign-code {
+        width: 24px;
+        height: 24px;
+    }
+    .sign-code span {
+        font-size: 9px;
+    }
+}
+
+
+/* ========================================= */
+
+
+/* [หน้า Price] ตกแต่งหน้าตารางราคา */
+
+
+/* ========================================= */
+
+.pricing-section {
+    background-color: #9a0007;
+    /* พื้นหลังสีแดงเลือดหมูเข้ม */
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* ให้ตกบรรทัดได้ถ้าจอเล็ก */
+    max-width: 1200px;
+    width: 100%;
+}
+
+
+/* ดีไซน์การ์ดแต่ละใบ */
+
+.price-card {
+    background: #fff;
+    border-radius: 15px;
+    width: 260px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    /* สำหรับติดริบบิ้น Popular */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    /* ลอยขึ้นเมื่อเอาเมาส์ชี้ */
+}
+
+
+/* หัวข้อการ์ด */
+
+.price-card h3 {
+    color: #9a0007;
+    font-size: 22px;
+    margin: 0 0 5px 0;
+}
+
+.sub-text {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+
+/* กล่องราคา */
+
+.price-box {
+    margin-bottom: 25px;
+}
+
+.currency {
+    font-size: 20px;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.amount {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.period {
+    display: block;
+    color: #999;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+/* รายการ Features */
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.features-list li {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.features-list li i {
+    color: #000;
+    /* ติ๊กถูกสีดำ */
+    margin-right: 8px;
+}
+
+
+/* ปุ่ม Contact Us */
+
+.btn-contact {
+    background-color: #9a0007;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+    width: 80%;
+    margin: 0 auto;
+    /* จัดกึ่งกลาง */
+}
+
+.btn-contact:hover {
+    background-color: #c62828;
+}
+
+
+/* ริบบิ้น Popular (สำหรับ Card 6 เดือน) */
+
+.price-card.popular {
+    overflow: hidden;
+    /* ซ่อนหางริบบิ้นที่เกิน */
+    border: 2px solid #000;
+    /* กรอบดำเหมือนในรูป */
+}
+
+.ribbon {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: #000;
+    color: #fff;
+    width: 120px;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive มือถือ */
+
+@media (max-width: 900px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .price-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* ========================================= */
+
+
+/* [Service Zone] ธีมสีดำ + ตารางรูปภาพ */
+
+
+/* ========================================= */
+
+.service-zone-section {
+    background-color: #353333;
+    /* พื้นหลังดำเกือบสนิท */
+    color: #fff;
+    padding: 60px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-head {
+    font-size: 48px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* ไล่สีตัวหนังสือทอง-ขาว ให้ดูหรู */
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* 1. ส่วนรูปแผนผัง */
+
+.map-wrapper {
+    margin-bottom: 60px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    background: #111;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    /* เงาดำฟุ้งๆ */
+}
+
+.main-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+
+/* 2. ตาราง Grid การ์ดโซน */
+
+.zone-grid {
+    display: grid;
+    /* จัดเรียงอัตโนมัติ: จอใหญ่ 3-4 ช่อง, จอเล็ก 1 ช่อง */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.zone-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.zone-card:hover {
+    transform: translateY(-10px);
+    /* ลอยขึ้นเมื่อเอาเมาส์ชี้ */
+    background-color: #252525;
+}
+
+
+/* กล่องใส่รูปภาพโซน */
+
+.zone-img-box {
+    width: 100%;
+    height: 180px;
+    /* ความสูงของช่องรูปภาพ */
+    position: relative;
+    background-color: #333;
+    /* สีรองพื้นกรณีรูปโหลดไม่มา */
+}
+
+.zone-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* บังคับรูปให้เต็มช่องโดยไม่เบี้ยว */
+    filter: brightness(0.9);
+    /* ปรับรูปให้มืดลงนิดนึงเพื่อให้ตัวเลขเด่น */
+}
+
+.zone-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+
+
+/* ข้อมูลโซน */
+
+.zone-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.zone-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #eee;
+}
+
+.zone-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+/* ========================================= */
+
+
+/* [FAQ Section] ธีมสีแดงเข้ม + ตัวหนังสือขาว */
+
+
+/* ========================================= */
+
+.faq-section {
+    background-color: #353333;
+    /* สีแดงเข้มตามรูป */
+    color: #fff;
+    padding: 60px 20px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.faq-container {
+    max-width: 900px;
+    /* จำกัดความกว้างให้อ่านง่ายตรงกลาง */
+    margin: 0 auto;
+}
+
+.faq-head {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+
+/* เส้นขีดคั่น */
+
+.faq-line {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 30px 0;
+}
+
+
+/* กล่องคำถาม */
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.faq-question i {
+    font-size: 14px;
+    color: #fff;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.faq-answer {
+    padding-left: 30px;
+    /* ย่อหน้าคำตอบเข้าไป */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+
+/* รายการทั่วไป (bullet) */
+
+.faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+
+/* รายการจุดเด่น (Checklist เขียว) */
+
+.highlight-list {
+    list-style: none;
+    padding: 0;
+}
+
+.highlight-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.highlight-list li i {
+    color: #4CAF50;
+    /* สีเขียวติ๊กถูก */
+    font-size: 18px;
+    margin-top: 4px;
+    /* จัดให้ตรงกับบรรทัดแรก */
+    background: #fff;
+    /* พื้นหลังขาวในกล่องติ๊ก */
+    border-radius: 2px;
+}
+
+
+/* ========================================= */
+
+
+/* [Contact Section] ธีมดำ-ทอง หรูหรา */
+
+
+/* ========================================= */
+
+.contact-us-section {
+    background-color: #9a0007;
+    /* พื้นหลังดำสนิท */
+    color: #fff;
+    padding: 80px 20px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.contact-container-box {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* หัวข้อส่วนบน */
+
+.section-header-left {
+    border-left: 5px solid #ffffff;
+    /* เส้นขีดสีทองด้านหน้า */
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+#ct-head {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+#ct-sub {
+    font-size: 16px;
+    color: #ffffff;
+    /* สีทอง */
+    margin: 0;
+    font-weight: 300;
+}
+
+
+/* Grid แบ่งซ้ายขวา */
+
+.contact-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* แบ่งสัดส่วน ซ้ายเล็ก ขวาใหญ่ */
+    gap: 30px;
+}
+
+
+/* การ์ดข้อมูล (ซ้าย) */
+
+.info-card-dark {
+    background-color: #1a1a1a;
+    /* สีเทาเข้มเกือบดำ */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#ct-info-title {
+    font-size: 24px;
+    color: #fffffe;
+    margin-top: 0;
+}
+
+.divider-gold {
+    width: 50px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+
+/* แถวข้อมูลแต่ละบรรทัด */
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.icon-circle-gold {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #ffffff;
+    /* ไอคอนสีทอง */
+    font-size: 18px;
+    border: 1px solid #444;
+}
+
+.info-detail h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #ccc;
+    font-weight: 400;
+}
+
+.info-detail p {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+
+/* การ์ดแผนที่ (ขวา) */
+
+.map-card-dark {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: #1a1a1a;
+    min-height: 400px;
+}
+
+.google-map-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    /* ปรับโทนสีแผนที่ให้มืดลงนิดหน่อยให้เข้าธีม (Optional) */
+    filter: contrast(1.1) grayscale(0.2);
+}
+
+
+/* Responsive มือถือ */
+
+@media (max-width: 900px) {
+    .contact-grid-layout {
+        grid-template-columns: 1fr;
+        /* เรียงเป็นแนวตั้ง */
+    }
+    .info-card-dark {
+        padding: 30px 20px;
+    }
+}
+
+
+/* ========================================= */
+
+
+/* [แก้ไขล่าสุด] ขยายป้ายและตัวหนังสือให้ใหญ่ขึ้น */
+
+
+/* ========================================= */
+
+
+/* 1. ขยายขนาดกล่องป้ายก่อน (ไม่งั้นตัวหนังสือจะล้น) */
+
+.sign-board {
+    width: 180px !important;
+    /* ขยายความกว้าง (เดิม 140) */
+    height: 75px !important;
+    /* ขยายความสูง (เดิม 60) */
+    padding: 0 15px !important;
+}
+
+
+/* 2. ขยายชื่อภาษาไทย */
+
+.sign-info .th {
+    font-size: 24px !important;
+    /* ใหญ่ขึ้นชัดเจน (เดิม 18) */
+    font-weight: 600;
+    line-height: 1;
+    /* ลดระยะห่างบรรทัด */
+}
+
+
+/* 3. ขยายชื่อภาษาอังกฤษ */
+
+.sign-info .en {
+    font-size: 12px !important;
+    /* (เดิม 10) */
+    margin-top: 2px;
+}
+
+
+/* 4. ขยายวงกลมรหัสสถานี (N15) */
+
+.sign-code {
+    width: 40px !important;
+    /* วงใหญ่ขึ้น (เดิม 34) */
+    height: 40px !important;
+    border: 2px solid #fff;
+    flex-shrink: 0;
+    /* ป้องกันวงบี้ */
+}
+
+.sign-code span {
+    font-size: 15px !important;
+    /* ตัวเลขใหญ่ขึ้น (เดิม 12) */
+}
+
+
+/* 5. ปรับเสาให้รับกับป้ายที่ใหญ่ขึ้น */
+
+.station-sign {
+    padding-bottom: 40px !important;
+    /* ดันป้ายขึ้นอีกนิด */
+}
+
+
+/* ========================================= */
+
+
+/* [แก้ไขล่าสุด] ปรับขนาดเมนูด้านบนและปุ่มให้ใหญ่ขึ้น */
+
+
+/* ========================================= */
+
+
+/* 1. ขยายเมนู (บริการ, โปรโมชั่น, ราคา, ติดต่อเรา) */
+
+.menu-list li a {
+    font-size: 20px !important;
+    /* เพิ่มขนาด (เดิม 15px) */
+    font-weight: 500 !important;
+    /* เพิ่มความหนาตัวหนังสือให้อ่านง่าย */
+    letter-spacing: 0.5px;
+    /* เพิ่มระยะห่างตัวอักษรนิดนึงให้ดูโปร */
+}
+
+
+/* 2. ขยายปุ่ม "สมัครคอร์ส" สีแดงขวาสุด */
+
+.btn-register {
+    font-size: 18px !important;
+    /* เพิ่มขนาดตัวหนังสือในปุ่ม (เดิม 15px) */
+    padding: 10px 35px !important;
+    /* ขยายกล่องปุ่มให้ใหญ่ขึ้น (บนล่าง 10, ซ้ายขวา 35) */
+    font-weight: 600 !important;
+    /* ตัวหนาขึ้น */
+    border-radius: 50px !important;
+    /* คงความโค้งมน */
+}
+
+
+/* 3. ขยายไอคอนแว่นขยาย */
+
+.icon-search i {
+    font-size: 22px !important;
+    /* ใหญ่ขึ้น (เดิม 18px) */
+}
+
+
+/* 4. ขยายธงชาติ (เปลี่ยนภาษา) */
+
+.lang-flag img {
+    width: 28px !important;
+    /* ธงใหญ่ขึ้น (เดิม 20px) */
+}
+
+
+/* 5. ขยายกล่องครอบธงชาติให้รับกับธงใหม่ */
+
+.lang-switcher {
+    padding: 6px 15px !important;
+    gap: 15px !important;
+    /* ระยะห่างระหว่างธง */
+}
+
+
+/* 6. (แถม) ปรับให้เมนูห่างกันมากขึ้นนิดนึง จะได้ไม่ดูเบียด */
+
+.menu-list {
+    gap: 35px !important;
+    /* (เดิม 25px) */
 }

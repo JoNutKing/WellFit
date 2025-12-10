@@ -1,113 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>WellFitBangkok │ Rajanakarn </title>
 </head>
+
 <body>
     <nav class="navbar">
-        
         <div class="nav-left">
             <a href="#" class="logo-link">
                 <img src="Pictures/Logo X.jpg" alt="WellFitBangkok" class="logo-img">
             </a>
         </div>
 
-      <div class="nav-right">
-    <ul class="menu-list">
-        <li><a href="#" id="menu-service">บริการ</a></li>
-        <li><a href="#" id="menu-promo">โปรโมชั่น</a></li>
-        <li><a href="#" id="menu-price">ราคา</a></li>
-        <li><a href="#" id="menu-contact">ติดต่อเรา</a></li>
-    </ul>
+        <div class="nav-right">
+            <ul class="menu-list">
+                <li><a href="#" id="menu-service">บริการ</a></li>
+                <li><a href="#" id="menu-promo">โปรโมชั่น</a></li>
+                <li><a href="#" id="menu-price">ราคา</a></li>
+                <li><a href="#" id="menu-contact">ติดต่อเรา</a></li>
+            </ul>
 
-    <div class="action-group">
-        <a href="#" class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></a>
-        
-        <div class="lang-switcher">
-            <a href="javascript:void(0)" class="lang-flag active" id="flag-th" onclick="setLang('th')" title="ภาษาไทย">
-                <img src="https://flagcdn.com/w40/th.png" alt="TH">
-            </a>
-            
-            <span class="divider">|</span>
-            
-            <a href="javascript:void(0)" class="lang-flag" id="flag-en" onclick="setLang('en')" title="English">
-                <img src="https://flagcdn.com/w40/gb.png" alt="EN">
-            </a>
+            <div class="action-group">
+                <a href="#" class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+                <div class="lang-switcher">
+                    <a href="javascript:void(0)" class="lang-flag active" id="flag-th" onclick="setLang('th')" title="ภาษาไทย">
+                        <img src="https://flagcdn.com/w40/th.png" alt="TH">
+                    </a>
+                    <span class="divider">|</span>
+                    <a href="javascript:void(0)" class="lang-flag" id="flag-en" onclick="setLang('en')" title="English">
+                        <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+                    </a>
+                </div>
+
+                <a href="#" class="btn-register" id="btn-register">สมัครคอร์ส</a>
+            </div>
         </div>
-
-        <a href="#" class="btn-register" id="btn-register">สมัครคอร์ส</a>
-    </div>
-</div>
     </nav>
-    <body>
+
     <div class="bg-slider">
-        <img src="/Pictures/H1.jpg" class="slide active">
-        <img src="/Pictures/H2.jpg" class="slide">
+        <img src="Pictures/H1.jpg" class="slide active">
+        <img src="Pictures/H2.jpg" class="slide">
     </div>
-</div>
+
+    <div class="bts-zone">
+        <div class="structure-pillars"></div>
+        <div class="bushes-container"></div>
+        <div class="structure-rail"></div>
+        <div class="station-sign">
+            <div class="sign-pole left"></div>
+            <div class="sign-pole right"></div>
+            <div class="sign-board">
+                <div class="sign-info">
+                    <span class="th">เซนหลุย</span>
+                    <span class="en">Saint Louis</span>
+                </div>
+                <div class="sign-code">
+                    <span>S4</span>
+                </div>
+            </div>
+        </div>
+        <div class="train-wrapper">
+            <img src="Pictures/BTS1.png" alt="BTS Train" class="bts-train-body">
+        </div>
+    </div>
+
+    <section class="service-zone-section">
+        <div class="container">
+            <h1 class="service-head" id="service-head">SERVICE ZONE</h1>
+            <div class="zone-grid">
+
+                <div class="zone-card" style="border-top: 4px solid #eebbcc;">
+                    <div class="zone-img-box">
+                        <img src="https://images.pexels.com/photos/8436724/pexels-photo-8436724.jpeg?cs=srgb&dl=pexels-yankrukov-8436724.jpg&fm=jpg" alt="Zone 01" class="zone-pic">
+                        <span class="zone-badge" style="background:#eebbcc; color:#000;">01</span>
+                    </div>
+                    <div class="zone-info">
+                        <h3 id="z1-title">Mindfulness & Relaxing</h3>
+                        <p id="z1-desc">โซนผ่อนคลายและทำสมาธิ</p>
+                    </div>
+                </div>
+
+                <div class="zone-card" style="border-top: 4px solid #6666ff;">
+                    <div class="zone-img-box">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2025/6/523139892/MM/BL/ZR/14328582/cubicle-toilet-partitions-500x500.jpg" alt="Zone 02" class="zone-pic">
+                        <span class="zone-badge" style="background:#6666ff;">02</span>
+                    </div>
+                    <div class="zone-info">
+                        <h3 id="z2-title">Changing Room + WC</h3>
+                        <p id="z2-desc">ห้องเปลี่ยนชุดและห้องน้ำ</p>
+                    </div>
+                </div>
+
+                <div class="zone-card" style="border-top: 4px solid #ff6633;">
+                    <div class="zone-img-box">
+                        <img src="https://tsmactive.com/image/catalog/2021/30/CF-plan-blog4.png" alt="Zone 03" class="zone-pic">
+                        <span class="zone-badge" style="background:#ff6633;">03</span>
+                    </div>
+                    <div class="zone-info">
+                        <h3 id="z3-title">Weight Training Zone</h3>
+                        <p id="z3-desc">โซนเวทเทรนนิ่งครบวงจร</p>
+                    </div>
+                </div>
+
+                <div class="zone-card" style="border-top: 4px solid #ffaa44;">
+                    <div class="zone-img-box">
+                        <img src="https://tsmactive.com/image/catalog/2021/2023/cf-project-17.png" alt="Zone 04" class="zone-pic">
+                        <span class="zone-badge" style="background:#ffaa44; color:#000;">04</span>
+                    </div>
+                    <div class="zone-info">
+                        <h3 id="z4-title">Cardio Zone</h3>
+                        <p id="z4-desc">โซนคาร์ดิโอ ลู่วิ่งและจักรยาน</p>
+                    </div>
+                </div>
+
+                <div class="zone-card" style="border-top: 4px solid #ffcc00;">
+                    <div class="zone-img-box">
+                        <img src="https://www.xavier-sldc.com/wp-content/uploads/2024/04/sldc_medium_6.jpg" alt="Zone 05" class="zone-pic">
+                        <span class="zone-badge" style="background:#ffcc00; color:#000;">05</span>
+                    </div>
+                    <div class="zone-info">
+                        <h3 id="z5-title">Class Room Zone</h3>
+                        <p id="z5-desc">ห้องคลาสกิจกรรมกลุ่ม</p>
+                    </div>
+                </div>
+
+                <div class="zone-card" style="border-top: 4px solid #0066cc;">
+                    <div class="zone-img-box">
+                        <img src="https://www.tspoolservice.com/images/editor/Blog_rp/blog19.jpg" alt="Zone 06" class="zone-pic">
+                        <span class="zone-badge" style="background:#0066cc;">06</span>
+                    </div>
+                    <div class="zone-info">
+                        <h3 id="z6-title">Swimming Pool</h3>
+                        <p id="z6-desc">สระว่ายน้ำระบบเกลือ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <h1 class="page-title" id="page-title">PRICE</h1>
+
+        <div class="pricing-container">
+            <div class="price-card">
+                <h3 id="p1-title">1 Day Pass</h3>
+                <p class="sub-text" id="p1-desc">full access for a day</p>
+                <div class="price-box">
+                    <span class="currency">฿</span>
+                    <span class="amount">500</span>
+                    <span class="period" id="p1-period">per day</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-wc">Weight & Cardio</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-ct">Class Training</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-sp">Swimming Pool</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-sa">Sauna</span></li>
+                </ul>
+                <a href="#" class="btn-contact" id="btn-contact-1">Contact us</a>
+            </div>
+
+            <div class="price-card">
+                <h3 id="p2-title">1 Month Pass</h3>
+                <p class="sub-text" id="p2-desc">full access for a month</p>
+                <div class="price-box">
+                    <span class="currency">฿</span>
+                    <span class="amount">2,000</span>
+                    <span class="period" id="p2-period">per month</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-wc">Weight & Cardio</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-ct">Class Training</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-sp">Swimming Pool</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-sa">Sauna</span></li>
+                </ul>
+                <a href="#" class="btn-contact" id="btn-contact-2">Contact us</a>
+            </div>
+
+            <div class="price-card popular">
+                <div class="ribbon">POPULAR</div>
+                <h3 id="p3-title">6 Month Pass</h3>
+                <p class="sub-text" id="p3-desc">full access for 6 months</p>
+                <div class="price-box">
+                    <span class="currency">฿</span>
+                    <span class="amount">8,400</span>
+                    <span class="period" id="p3-period">per 6 months</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-wc">Weight & Cardio</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-ct">Class Training</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-sp">Swimming Pool</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-sa">Sauna</span></li>
+                </ul>
+                <a href="#" class="btn-contact" id="btn-contact-3">Contact us</a>
+            </div>
+
+            <div class="price-card">
+                <h3 id="p4-title">1 Year Pass</h3>
+                <p class="sub-text" id="p4-desc">full access in a year</p>
+                <div class="price-box">
+                    <span class="currency">฿</span>
+                    <span class="amount">13,200</span>
+                    <span class="period" id="p4-period">per year</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-wc">Weight & Cardio</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-ct">Class Training</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-sp">Swimming Pool</span></li>
+                    <li><i class="fa-regular fa-circle-check"></i> <span class="feat-sa">Sauna</span></li>
+                </ul>
+                <a href="#" class="btn-contact" id="btn-contact-4">Contact us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h1 class="faq-head" id="faq-head">FAQ</h1>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <h3 id="q1-head">เวลาเปิด-ปิดทำการ</h3>
+                </div>
+                <div class="faq-answer">
+                    <p id="q1-desc1">เวลาเปิด-ปิด WellFit</p>
+                    <ul class="faq-list">
+                        <li id="q1-desc2">• วันจันทร์-ศุกร์ เวลา 06:30 - 21:00 น.</li>
+                        <li id="q1-desc3">• วันเสาร์-อาทิตย์ เวลา 08:00 - 21:00 น.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="faq-line">
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <h3 id="q2-head">WellFit มีกี่สาขา</h3>
+                </div>
+                <div class="faq-answer">
+                    <p id="q2-desc">ตอนนี้ Wellfit Bangkok เรามี 1 สาขา ตั้งอยู่ที่อาคารรัจนาการ ชั้น 9 (ติด BTS ช่องนนทรี , เซ็นต์หลุยส์)</p>
+                </div>
+            </div>
+
+            <hr class="faq-line">
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <h3 id="q3-head">จุดเด่นของ WellFit</h3>
+                </div>
+                <div class="faq-answer">
+                    <ul class="highlight-list">
+                        <li><i class="fa-solid fa-square-check"></i> <span id="hl-1">ราคาดีที่สุดในย่านสาทร</span></li>
+                        <li><i class="fa-solid fa-square-check"></i> <span id="hl-2">เครื่องมือใหม่ ครบครัน สำหรับการ Weight และ Cardio</span></li>
+                        <li><i class="fa-solid fa-square-check"></i> <span id="hl-3">กิจกรรมครบถ้วน มีทั้ง Class, Kickfit, Weight, Sauna, Swim</span></li>
+                        <li><i class="fa-solid fa-square-check"></i> <span id="hl-4">คนไม่แออัด ไม่ต้องแย่งกันเล่น</span></li>
+                        <li><i class="fa-solid fa-square-check"></i> <span id="hl-5">PT พร้อม ตอบโจทย์ทุกเป้าหมายในทุกโปรแกรมเทรนนิ่ง</span></li>
+                        <li><i class="fa-solid fa-square-check"></i> <span id="hl-6">เดินทางง่าย ใจกลางเมือง</span></li>
+                        <li><i class="fa-solid fa-square-check"></i> <span id="hl-7">ที่จอดรถฟรี 2.5 ชั่วโมง ถึง 3.5 ชั่วโมง</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="faq-line">
+
+        </div>
+    </section>
+
+    <section class="contact-us-section">
+        <div class="contact-container-box">
+
+            <div class="section-header-left">
+                <h2 id="ct-head">ติดต่อเราและการเดินทาง</h2>
+                <p id="ct-sub">พร้อมให้คำปรึกษาและต้อนรับสู่สังคมคนรักสุขภาพ</p>
+            </div>
+
+            <div class="contact-grid-layout">
+                <div class="info-card-dark">
+                    <h3 id="ct-info-title">ช่องทางการติดต่อ</h3>
+                    <div class="divider-gold"></div>
+
+                    <div class="info-row">
+                        <div class="icon-circle-gold"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-detail">
+                            <h4 id="lbl-addr">ที่อยู่</h4>
+                            <p id="txt-addr">อาคารรัจนาการ ชั้น 9 ถนนสาทรใต้<br>แขวงยานนาวา เขตสาทร กรุงเทพฯ 10120</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="icon-circle-gold"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-detail">
+                            <h4 id="lbl-phone">เบอร์โทรศัพท์</h4>
+                            <p>02-676-xxxx (Auto)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="icon-circle-gold"><i class="fa-brands fa-line"></i></div>
+                        <div class="info-detail">
+                            <h4 id="lbl-line">Line Official</h4>
+                            <p>@wellfitbangkok</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="icon-circle-gold"><i class="fa-brands fa-facebook-f"></i></div>
+                        <div class="info-detail">
+                            <h4 id="lbl-fb">Facebook Fanpage</h4>
+                            <p>WellFit Bangkok Rajanakarn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-card-dark">
+                    <iframe class="google-map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.195082173617!2d100.52882731535497!3d13.721736701977715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f3330684879%3A0x6d900693dd82c20!2sRajanakarn%20Building!5e0!3m2!1sen!2sth!4v1675840000000!5m2!1sen!2sth"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <script>
-    // 1. ฐานข้อมูลคำศัพท์ (อยากแก้คำ แก้ตรงนี้ได้เลย)
-    const translations = {
-        th: {
-            service: "บริการ",
-            promo: "โปรโมชั่น",
-            price: "ราคา",
-            contact: "ติดต่อเรา",
-            register: "สมัครคอร์ส"
-        },
-        en: {
-            service: "Service",
-            promo: "Promotion",
-            price: "Price",
-            contact: "Contact",
-            register: "Register Now"
+        const translations = {
+            th: {
+                // --- เมนูบาร์ ---
+                service: "บริการ",
+                promo: "โปรโมชั่น",
+                price: "ราคา",
+                contact: "ติดต่อเรา",
+                register: "สมัครคอร์ส",
+
+                // --- ป้ายสถานี (ถ้าต้องการเปลี่ยนชื่อสถานีตามภาษา) ---
+                stationName: "เซนต์หลุยส์",
+
+                // --- ส่วน Pricing ---
+                pageTitle: "ราคาแพ็กเกจ",
+                p1Title: "รายวัน",
+                p1Desc: "เข้าใช้งานได้ 1 วัน",
+                p1Period: "ต่อวัน",
+                p2Title: "รายเดือน",
+                p2Desc: "เข้าใช้งานได้ 1 เดือน",
+                p2Period: "ต่อเดือน",
+                p3Title: "6 เดือน",
+                p3Desc: "เข้าใช้งานได้ 6 เดือน",
+                p3Period: "ต่อ 6 เดือน",
+                p4Title: "รายปี",
+                p4Desc: "เข้าใช้งานได้ 1 ปี",
+                p4Period: "ต่อปี",
+                contactBtn: "ติดต่อเรา",
+
+                // --- Features (Pricing) ---
+                featWC: "เวทเทรนนิ่ง & คาร์ดิโอ",
+                featCT: "คลาสเทรนนิ่ง",
+                featSP: "สระว่ายน้ำ",
+                featSA: "ซาวน่า",
+
+                // --- Service Zone ---
+                serviceTitle: "โซนให้บริการ",
+                z1Title: "โซนผ่อนคลาย & สมาธิ",
+                z1Desc: "พื้นที่เงียบสงบสำหรับทำสมาธิและพักผ่อน",
+                z2Title: "ห้องเปลี่ยนชุด + ห้องน้ำ",
+                z2Desc: "สะอาด สะดวก ปลอดภัย พร้อมล็อกเกอร์",
+                z3Title: "โซนเวทเทรนนิ่ง",
+                z3Desc: "อุปกรณ์ครบครันสำหรับเสริมสร้างกล้ามเนื้อ",
+                z4Title: "โซนคาร์ดิโอ",
+                z4Desc: "ลู่วิ่งและเครื่องปั่นจักรยานวิวเมือง",
+                z5Title: "ห้องคลาส",
+                z5Desc: "รองรับกิจกรรมโยคะ เต้น และบอดี้คอมแบท",
+                z6Title: "สระว่ายน้ำ",
+                z6Desc: "สระระบบเกลือในร่ม วิวพาโนรามา",
+                // (ถ้ามีโซน 7 เพิ่มในอนาคตก็ใส่ได้ แต่ถ้าไม่มี โค้ดใหม่จะไม่ Error ครับ)
+
+                // --- FAQ ---
+                faqHead: "คำถามที่พบบ่อย (FAQ)",
+                q1Head: "เวลาเปิด-ปิดทำการ",
+                q1Desc1: "เวลาเปิด-ปิด WellFit",
+                q1Desc2: "• วันจันทร์-ศุกร์ เวลา 06:30 - 21:00 น.",
+                q1Desc3: "• วันเสาร์-อาทิตย์ เวลา 08:00 - 21:00 น.",
+                q2Head: "WellFit มีกี่สาขา",
+                q2Desc: "ตอนนี้ Wellfit Bangkok เรามี 1 สาขา ตั้งอยู่ที่อาคารรัจนาการ ชั้น 9 (ติด BTS ช่องนนทรี , เซนต์หลุยส์)",
+                q3Head: "จุดเด่นของ WellFit",
+                hl1: "ราคาดีที่สุดในย่านสาทร",
+                hl2: "เครื่องมือใหม่ ครบครัน สำหรับการ Weight และ Cardio",
+                hl3: "กิจกรรมครบถ้วน มีทั้ง Class, Kickfit, Weight, Sauna, Swim",
+                hl4: "คนไม่แออัด ไม่ต้องแย่งกันเล่น",
+                hl5: "PT พร้อม ตอบโจทย์ทุกเป้าหมายในทุกโปรแกรมเทรนนิ่ง",
+                hl6: "เดินทางง่าย ใจกลางเมือง",
+                hl7: "ที่จอดรถฟรี 2.5 ชั่วโมง ถึง 3.5 ชั่วโมง",
+
+                // --- Contact Us ---
+                ctHead: "ติดต่อเราและการเดินทาง",
+                ctSub: "พร้อมให้คำปรึกษาและต้อนรับสู่สังคมคนรักสุขภาพ",
+                ctInfoTitle: "ช่องทางการติดต่อ",
+                lblAddr: "ที่อยู่",
+                txtAddr: "อาคารรัจนาการ ชั้น 9 ถนนสาทรใต้<br>แขวงยานนาวา เขตสาทร กรุงเทพฯ 10120",
+                lblPhone: "เบอร์โทรศัพท์",
+                lblLine: "Line Official",
+                lblFb: "Facebook Fanpage"
+            },
+            en: {
+                // --- Navbar ---
+                service: "Service",
+                promo: "Promotion",
+                price: "Price",
+                contact: "Contact",
+                register: "Register Now",
+
+                // --- Station Sign ---
+                stationName: "Saint Louis",
+
+                // --- Pricing Section ---
+                pageTitle: "PACKAGES",
+                p1Title: "1 Day Pass",
+                p1Desc: "Full access for a day",
+                p1Period: "per day",
+                p2Title: "1 Month Pass",
+                p2Desc: "Full access for a month",
+                p2Period: "per month",
+                p3Title: "6 Month Pass",
+                p3Desc: "Full access for 6 months",
+                p3Period: "per 6 months",
+                p4Title: "1 Year Pass",
+                p4Desc: "Full access in a year",
+                p4Period: "per year",
+                contactBtn: "Contact us",
+
+                // --- Features ---
+                featWC: "Weight & Cardio",
+                featCT: "Class Training",
+                featSP: "Swimming Pool",
+                featSA: "Sauna",
+
+                // --- Service Zone ---
+                serviceTitle: "SERVICE ZONE",
+                z1Title: "Mindfulness & Relaxing",
+                z1Desc: "Quiet area for meditation and relaxation.",
+                z2Title: "Changing Room + WC",
+                z2Desc: "Clean, convenient, safe with lockers.",
+                z3Title: "Weight Training Zone",
+                z3Desc: "Full equipment for muscle building.",
+                z4Title: "Cardio Zone",
+                z4Desc: "Treadmills and bikes with city view.",
+                z5Title: "Class Room Zone",
+                z5Desc: "For Yoga, Dance, and Body Combat classes.",
+                z6Title: "Swimming Pool",
+                z6Desc: "Indoor salt-water system pool.",
+
+                // --- FAQ ---
+                faqHead: "FAQ",
+                q1Head: "Opening Hours",
+                q1Desc1: "WellFit Opening Hours",
+                q1Desc2: "• Mon-Fri: 06:30 - 21:00",
+                q1Desc3: "• Sat-Sun: 08:00 - 21:00",
+                q2Head: "Our Locations",
+                q2Desc: "Currently, Wellfit Bangkok has 1 branch located at Rajanakarn Building, 9th Floor (Near BTS Chong Nonsi, Saint Louis).",
+                q3Head: "WellFit Highlights",
+                hl1: "Best price in Sathorn area.",
+                hl2: "New and complete equipment for Weight and Cardio.",
+                hl3: "Full activities: Class, Kickfit, Weight, Sauna, Swim.",
+                hl4: "Not crowded, plenty of space.",
+                hl5: "PT ready to support every training goal.",
+                hl6: "Easy access in the city center.",
+                hl7: "Free parking 2.5 - 3.5 hours.",
+
+                // --- Contact Us ---
+                ctHead: "Contact Us & Location",
+                ctSub: "Ready to consult and welcome you to our healthy community.",
+                ctInfoTitle: "Contact Channels",
+                lblAddr: "Address",
+                txtAddr: "Rajanakarn Building, 9th Floor, South Sathorn Rd,<br>Yannawa, Sathorn, Bangkok 10120",
+                lblPhone: "Phone Number",
+                lblLine: "Line Official",
+                lblFb: "Facebook Fanpage"
+            }
+        };
+
+        // ฟังก์ชันช่วยเปลี่ยนข้อความ (แบบปลอดภัย ไม่ Error ถ้าหา ID ไม่เจอ)
+        function safeSetText(id, text) {
+            const el = document.getElementById(id);
+            if (el) el.innerText = text;
         }
-    };
 
-    // 2. ฟังก์ชันสั่งเปลี่ยนภาษา
-    function setLang(lang) {
-        // เปลี่ยนข้อความในเมนู
-        document.getElementById('menu-service').innerText = translations[lang].service;
-        document.getElementById('menu-promo').innerText = translations[lang].promo;
-        document.getElementById('menu-price').innerText = translations[lang].price;
-        document.getElementById('menu-contact').innerText = translations[lang].contact;
-        
-        // เปลี่ยนข้อความปุ่ม
-        document.getElementById('btn-register').innerText = translations[lang].register;
-
-        // สลับสถานะ Active ของธง (ให้ธงที่เลือกชัดขึ้น)
-        if (lang === 'th') {
-            document.getElementById('flag-th').classList.add('active'); // ไทยชัด
-            document.getElementById('flag-en').classList.remove('active'); // อังกฤษจาง
-        } else {
-            document.getElementById('flag-en').classList.add('active'); // อังกฤษชัด
-            document.getElementById('flag-th').classList.remove('active'); // ไทยจาง
+        function safeSetHTML(id, html) {
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = html;
         }
-    }
 
-    /* --- [เพิ่มใหม่] สคริปต์สไลด์พื้นหลัง --- */
-    const slides = document.querySelectorAll('.slide'); // ดึงรูปทั้งหมดที่มีคลาส slide
-    let currentSlide = 0;
-    const slideInterval = 7000; // ความเร็วในการเปลี่ยนรูป (4000 = 4 วินาที)
+        function setLang(lang) {
+            const t = translations[lang]; // ย่อตัวแปรให้สั้นลง
 
-    function nextSlide() {
-        // 1. ซ่อนรูปปัจจุบัน (เอาคลาส active ออก)
-        slides[currentSlide].classList.remove('active');
-        
-        // 2. ขยับไปรูปถัดไป (ถ้าหมดแล้วให้วนกลับไปรูปแรก)
-        currentSlide = (currentSlide + 1) % slides.length;
-        
-        // 3. แสดงรูปใหม่ (ใส่คลาส active)
-        slides[currentSlide].classList.add('active');
-    }
+            // --- 1. Navbar ---
+            safeSetText('menu-service', t.service);
+            safeSetText('menu-promo', t.promo);
+            safeSetText('menu-price', t.price);
+            safeSetText('menu-contact', t.contact);
+            safeSetText('btn-register', t.register);
 
-    // สั่งให้ทำงานอัตโนมัติทุกๆ 4 วินาที
-    setInterval(nextSlide, slideInterval);
-</script>
-</body>
-</html>
+            // --- 2. Flags Active State ---
+            if (lang === 'th') {
+                document.getElementById('flag-th').classList.add('active');
+                document.getElementById('flag-en').classList.remove('active');
+            } else {
+                document.getElementById('flag-en').classList.add('active');
+                document.getElementById('flag-th').classList.remove('active');
+            }
+
+            // --- 3. Pricing Section ---
+            safeSetText('page-title', t.pageTitle);
+
+            safeSetText('p1-title', t.p1Title);
+            safeSetText('p1-desc', t.p1Desc);
+            safeSetText('p1-period', t.p1Period);
+            safeSetText('p2-title', t.p2Title);
+            safeSetText('p2-desc', t.p2Desc);
+            safeSetText('p2-period', t.p2Period);
+            safeSetText('p3-title', t.p3Title);
+            safeSetText('p3-desc', t.p3Desc);
+            safeSetText('p3-period', t.p3Period);
+            safeSetText('p4-title', t.p4Title);
+            safeSetText('p4-desc', t.p4Desc);
+            safeSetText('p4-period', t.p4Period);
+
+            // อัปเดตปุ่ม Contact ทุกปุ่ม
+            for (let i = 1; i <= 4; i++) {
+                safeSetText(`btn-contact-${i}`, t.contactBtn);
+            }
+
+            // อัปเดต Features (ใช้ Class)
+            updateFeatures('feat-wc', t.featWC);
+            updateFeatures('feat-ct', t.featCT);
+            updateFeatures('feat-sp', t.featSP);
+            updateFeatures('feat-sa', t.featSA);
+
+            // --- 4. Service Zone ---
+            safeSetText('service-head', t.serviceTitle);
+            // วนลูปแปลโซน 1-7 (แต่ถ้ามีแค่ 6 ก็จะไม่ Error เพราะใช้ safeSetText)
+            for (let i = 1; i <= 7; i++) {
+                if (t[`z${i}Title`]) { // เช็คก่อนว่ามีคำแปลไหม
+                    safeSetText(`z${i}-title`, t[`z${i}Title`]);
+                    safeSetText(`z${i}-desc`, t[`z${i}Desc`]);
+                }
+            }
+
+            // --- 5. FAQ Section ---
+            safeSetText('faq-head', t.faqHead);
+
+            safeSetText('q1-head', t.q1Head);
+            safeSetText('q1-desc1', t.q1Desc1);
+            safeSetText('q1-desc2', t.q1Desc2);
+            safeSetText('q1-desc3', t.q1Desc3);
+
+            safeSetText('q2-head', t.q2Head);
+            safeSetText('q2-desc', t.q2Desc);
+
+            safeSetText('q3-head', t.q3Head);
+            // วนลูปแปลจุดเด่น 7 ข้อ
+            for (let i = 1; i <= 7; i++) {
+                safeSetText(`hl-${i}`, t[`hl${i}`]);
+            }
+
+            // --- 6. Contact & Map ---
+            safeSetText('ct-head', t.ctHead);
+            safeSetText('ct-sub', t.ctSub);
+            safeSetText('ct-info-title', t.ctInfoTitle);
+
+            safeSetText('lbl-addr', t.lblAddr);
+            safeSetHTML('txt-addr', t.txtAddr); // ใช้ HTML เพราะมี <br>
+
+            safeSetText('lbl-phone', t.lblPhone);
+            safeSetText('lbl-line', t.lblLine);
+            safeSetText('lbl-fb', t.lblFb);
+        }
+
+        // ฟังก์ชันช่วยอัปเดต Element หลายตัวที่มี Class เดียวกัน
+        function updateFeatures(className, text) {
+            const elements = document.querySelectorAll('.' + className);
+            elements.forEach(el => el.innerText = text);
+        }
+    </script>
