@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>WellFitBangkok │ Rajanakarn </title>
+</head>
+<body>
+    <nav class="navbar">
+        
+        <div class="nav-left">
+            <a href="#" class="logo-link">
+                <img src="Pictures/Logo X.jpg" alt="WellFitBangkok" class="logo-img">
+            </a>
+        </div>
+
+      <div class="nav-right">
+    <ul class="menu-list">
+        <li><a href="#" id="menu-service">บริการ</a></li>
+        <li><a href="#" id="menu-promo">โปรโมชั่น</a></li>
+        <li><a href="#" id="menu-price">ราคา</a></li>
+        <li><a href="#" id="menu-contact">ติดต่อเรา</a></li>
+    </ul>
+
+    <div class="action-group">
+        <a href="#" class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></a>
+        
+        <div class="lang-switcher">
+            <a href="javascript:void(0)" class="lang-flag active" id="flag-th" onclick="setLang('th')" title="ภาษาไทย">
+                <img src="https://flagcdn.com/w40/th.png" alt="TH">
+            </a>
+            
+            <span class="divider">|</span>
+            
+            <a href="javascript:void(0)" class="lang-flag" id="flag-en" onclick="setLang('en')" title="English">
+                <img src="https://flagcdn.com/w40/gb.png" alt="EN">
+            </a>
+        </div>
+
+        <a href="#" class="btn-register" id="btn-register">สมัครคอร์ส</a>
+    </div>
+</div>
+    </nav>
+    <body>
+    <div class="bg-slider">
+        <img src="/Pictures/H1.jpg" class="slide active">
+        <img src="/Pictures/H2.jpg" class="slide">
+    </div>
+</div>
+
+    <script>
+    // 1. ฐานข้อมูลคำศัพท์ (อยากแก้คำ แก้ตรงนี้ได้เลย)
+    const translations = {
+        th: {
+            service: "บริการ",
+            promo: "โปรโมชั่น",
+            price: "ราคา",
+            contact: "ติดต่อเรา",
+            register: "สมัครคอร์ส"
+        },
+        en: {
+            service: "Service",
+            promo: "Promotion",
+            price: "Price",
+            contact: "Contact",
+            register: "Register Now"
+        }
+    };
+
+    // 2. ฟังก์ชันสั่งเปลี่ยนภาษา
+    function setLang(lang) {
+        // เปลี่ยนข้อความในเมนู
+        document.getElementById('menu-service').innerText = translations[lang].service;
+        document.getElementById('menu-promo').innerText = translations[lang].promo;
+        document.getElementById('menu-price').innerText = translations[lang].price;
+        document.getElementById('menu-contact').innerText = translations[lang].contact;
+        
+        // เปลี่ยนข้อความปุ่ม
+        document.getElementById('btn-register').innerText = translations[lang].register;
+
+        // สลับสถานะ Active ของธง (ให้ธงที่เลือกชัดขึ้น)
+        if (lang === 'th') {
+            document.getElementById('flag-th').classList.add('active'); // ไทยชัด
+            document.getElementById('flag-en').classList.remove('active'); // อังกฤษจาง
+        } else {
+            document.getElementById('flag-en').classList.add('active'); // อังกฤษชัด
+            document.getElementById('flag-th').classList.remove('active'); // ไทยจาง
+        }
+    }
+
+    /* --- [เพิ่มใหม่] สคริปต์สไลด์พื้นหลัง --- */
+    const slides = document.querySelectorAll('.slide'); // ดึงรูปทั้งหมดที่มีคลาส slide
+    let currentSlide = 0;
+    const slideInterval = 7000; // ความเร็วในการเปลี่ยนรูป (4000 = 4 วินาที)
+
+    function nextSlide() {
+        // 1. ซ่อนรูปปัจจุบัน (เอาคลาส active ออก)
+        slides[currentSlide].classList.remove('active');
+        
+        // 2. ขยับไปรูปถัดไป (ถ้าหมดแล้วให้วนกลับไปรูปแรก)
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // 3. แสดงรูปใหม่ (ใส่คลาส active)
+        slides[currentSlide].classList.add('active');
+    }
+
+    // สั่งให้ทำงานอัตโนมัติทุกๆ 4 วินาที
+    setInterval(nextSlide, slideInterval);
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+/* ตั้งค่าพื้นฐาน */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* --- Navbar Container หลัก --- */
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* [เพิ่มบรรทัดนี้] เทสีดำรองพื้นทั้งแถบ เพื่อปิดช่องว่างสีขาวตรงรอยต่อครับ */
+    background-color: #1a1a1a; 
+}
+
+/* --- แก้ไขในไฟล์ style.css --- */
+.nav-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%; 
+    background-color: transparent !important;
+    min-width: 500px; 
+    
+    /* [แก้ตรงนี้] เพิ่มตัวเลขเพื่อดันโลโก้ไปทางขวาครับ */
+    /* จากเดิม 30px ลองเปลี่ยนเป็น 60px, 80px หรือ 100px จนกว่าจะพอใจ */
+    padding-left: 80px;  
+    
+    padding-right: 80px;
+    margin-right: 20px;
+    z-index: 10;
+}
+
+/* --- แก้ไขในไฟล์ style.css --- */
+.nav-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px; 
+    width: 100%; 
+    height: 100%;
+    
+    /* [แก้ตรงนี้] เปลี่ยนเป็นสีแดงเบอร์นี้ครับ เพื่อให้สูตร Blend ทำงานได้ */
+    background: #8B1E1E; 
+    
+    /* ส่วนอื่นเหมือนเดิม */
+    transform: skewX(-30deg);
+    transform-origin: top left;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+/* --- แก้ไขในไฟล์ style.css --- */
+.logo-img {
+    height: 55px; 
+    width: auto;
+    display: block;
+    filter: none;
+    
+    /* [เพิ่มบรรทัดนี้] ทีเด็ดครับ! มันจะลบกรอบสีเข้มออก แล้วเอาสีแดง #8B1E1E มาถมแทน */
+    mix-blend-mode: lighten; 
+}
+    
+
+/* --- ฝั่งขวา: พื้นหลังดำ (คงเดิม) --- */
+.nav-right {
+    background-color: #1a1a1a;
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    padding-right: 40px; 
+    gap: 30px; 
+}
+
+/* เมนูลิงก์ */
+.menu-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px; 
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #e0e0e0; 
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.menu-list li a:hover {
+    color: #fff; 
+}
+
+/* กลุ่มปุ่มขวาสุด */
+.action-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-search {
+    color: white;
+    font-size: 18px;
+}
+
+/* --- [แก้ไข] กล่องครอบปุ่มเปลี่ยนภาษา --- */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* เพิ่มระยะห่างระหว่างธงให้ดูสบายตา */
+    background: rgba(255,255,255,0.1); 
+    padding: 6px 15px; /* เพิ่มพื้นที่ภายในกรอบ */
+    border-radius: 30px; /* ปรับให้โค้งมนรับกับปุ่มสมัคร */
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* --- [แก้ไข] ขนาดรูปธง --- */
+.lang-flag img {
+    width: 20px; /* ขยายขนาดธงให้ใหญ่ขึ้น (เดิม 24px) */
+    height: auto;
+    border-radius: 3px; 
+    transition: transform 0.2s, filter 0.2s;
+    filter: grayscale(100%) opacity(0.7); /* ธงที่ไม่เลือกให้เป็นสีเทาและจางลง */
+    display: block;
+}
+
+/* สถานะ Active หรือ Hover */
+.lang-flag.active img, 
+.lang-flag:hover img {
+    filter: grayscale(0%) opacity(1); /* คืนสีสดใส */
+    transform: scale(1.15); /* ขยายใหญ่ขึ้นเมื่อชี้ */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* เพิ่มเงาให้ดูมีมิติ */
+}
+
+/* --- [แก้ไข] ปุ่มสมัครคอร์ส (สีแดง) --- */
+.btn-register {
+    /* ไล่สีแดง: บนสว่าง ล่างเข้ม (ดูพรีเมียม) */
+    background: linear-gradient(180deg, #d32f2f 0%, #9a0007 100%);
+    
+    color: #fff; /* ตัวหนังสือสีขาว */
+    text-decoration: none;
+    padding: 8px 25px; /* เพิ่มความกว้างปุ่ม */
+    border-radius: 50px;
+    font-weight: 500; /* ลดความหนาตัวอักษรลงนิดนึงให้ดูโมเดิร์น */
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    
+    /* ใส่เงาแดงเรืองแสง */
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* ขอบขาวจางๆ เพิ่มมิติ */
+    transition: all 0.3s ease;
+}
+
+/* เอฟเฟกต์ตอนชี้เมาส์ */
+.btn-register:hover {
+    /* เปลี่ยนสีให้สว่างขึ้น */
+    background: linear-gradient(180deg, #f44336 0%, #c62828 100%);
+    transform: translateY(-2px); /* ลอยขึ้น */
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6); /* เงาเข้มขึ้น */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .menu-list {
+        display: none; 
+    }
+}
+
+/* --- [แก้ไข] เมนูลิงก์ พร้อมลูกเล่นเส้นขีดวิ่ง --- */
+.menu-list li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.3s;
+    position: relative; /* สำคัญ! ใช้สำหรับจัดตำแหน่งเส้นขีด */
+    padding-bottom: 5px; /* เว้นที่ให้เส้นขีด */
+}
+
+/* สร้างเส้นขีดที่ซ่อนอยู่ */
+.menu-list li a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* เริ่มต้นความกว้างเป็น 0 (มองไม่เห็น) */
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #FF4500; /* สีเส้นขีด (สีส้มแดง หรือเปลี่ยนเป็นขาวก็ได้) */
+    transition: all 0.3s ease-in-out; /* เอฟเฟกต์ค่อยๆ วิ่ง */
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* เพิ่มแสงโกลว์ให้เส้น */
+}
+
+/* เมื่อเอาเมาส์ชี้ */
+.menu-list li a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5); /* ตัวหนังสือเรืองแสงนิดๆ */
+}
+
+.menu-list li a:hover::after {
+    width: 100%; /* ขยายความกว้างเต็ม 100% */
+    left: 0; /* ขยายจากตรงกลางออกไปริม */
+}
+
+/* --- [เพิ่มใหม่] ตั้งค่าพื้นหลังสไลด์โชว์ --- */
+.bg-slider {
+    position: fixed; /* ยึดติดหน้าจอไม่ให้ขยับ */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* เต็มความสูงจอ */
+    z-index: -1; /* ส่งไปอยู่ชั้นหลังสุด (หลัง Navbar) */
+    background-color: #000; /* สีรองพื้นกันรูปไม่โหลด */
+}
+
+.slide {
+    position: absolute; /* ให้รูปซ้อนทับกันที่ตำแหน่งเดิม */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* บังคับรูปให้เต็มจอโดยสัดส่วนไม่เพี้ยน */
+    opacity: 0; /* ซ่อนรูปไว้ก่อน */
+    transition: opacity 2s ease-in-out; /* เอฟเฟกต์ตอนเปลี่ยนรูป (Fade) */
+}
+
+/* คลาสนี้จะถูกใส่โดย JavaScript เพื่อโชว์รูป */
+.slide.active {
+    opacity: 1; /* แสดงรูป */
+}
