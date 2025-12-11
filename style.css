@@ -28,7 +28,6 @@ h3,
     display: flex;
     width: 100%;
     height: 70px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* [เพิ่มบรรทัดนี้] เทสีดำรองพื้นทั้งแถบ เพื่อปิดช่องว่างสีขาวตรงรอยต่อครับ */
     background-color: #1a1a1a;
 }
@@ -66,7 +65,6 @@ h3,
     /* ส่วนอื่นเหมือนเดิม */
     transform: skewX(-30deg);
     transform-origin: top left;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
     z-index: -1;
 }
 
@@ -366,11 +364,16 @@ h3,
     left: 0;
     width: 100%;
     height: 100%;
-    /* ปรับวงกลมพุ่มไม้ให้ดูแน่นและมีมิติ */
-    background-image: radial-gradient(circle at 20px 30px, #2e7d32 20px, transparent 21px), radial-gradient(circle at 50px 20px, #388e3c 28px, transparent 29px), radial-gradient(circle at 85px 35px, #4caf50 18px, transparent 19px), radial-gradient(circle at 120px 25px, #2e7d32 25px, transparent 26px);
+    
+    /* [แก้ไข] ปรับตำแหน่งวงกลมลูกสุดท้าย (ตัวที่ 4) จาก 120px เป็น 105px และลดขนาดลงนิดนึงเพื่อไม่ให้ล้นกรอบ */
+    background-image: 
+        radial-gradient(circle at 20px 30px, #2e7d32 20px, transparent 21px), 
+        radial-gradient(circle at 50px 20px, #388e3c 28px, transparent 29px), 
+        radial-gradient(circle at 85px 35px, #4caf50 18px, transparent 19px), 
+        radial-gradient(circle at 110px 30px, #2e7d32 20px, transparent 21px); /* <-- แก้บรรทัดนี้ */
+        
     background-repeat: repeat-x;
-    /* [แก้ตรงนี้] ลดระยะห่างการซ้ำจาก 200px เหลือ 130px (พุ่มไม้จะดูแน่นขึ้น ไม่กว้างเกิน) */
-    background-size: 130px 100%;
+    background-size: 130px 100%; /* คงขนาดเดิมไว้ */
 }
 
 
@@ -490,31 +493,6 @@ h3,
     background-size: 200px 100%;
     z-index: 1;
 }
-
-
-/* 2. สร้าง "พุ่มไม้" - คงเดิม */
-
-.bushes-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 45px;
-    z-index: 2;
-}
-
-.bushes-container::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle at 20px 30px, #2e7d32 20px, transparent 21px), radial-gradient(circle at 50px 20px, #388e3c 28px, transparent 29px), radial-gradient(circle at 85px 35px, #4caf50 18px, transparent 19px), radial-gradient(circle at 120px 25px, #2e7d32 25px, transparent 26px);
-    background-repeat: repeat-x;
-    background-size: 130px 100%;
-}
-
 
 /* 3. สร้าง "คานราง" - คงเดิม */
 
@@ -1680,4 +1658,497 @@ h3,
 .menu-list {
     gap: 35px !important;
     /* (เดิม 25px) */
+}
+
+/* ========================================= */
+/* [Footer] ส่วนท้ายเว็บ - ดีไซน์หรูหรา */
+/* ========================================= */
+
+.site-footer {
+    background-color: #1a1a1a; /* พื้นหลังสีดำเดียวกับ Navbar */
+    color: #b0b0b0; /* สีตัวหนังสือเทาอ่อน อ่านสบายตา */
+    padding-top: 70px;
+    padding-bottom: 30px;
+    font-family: 'Kanit', sans-serif;
+    border-top: 5px solid #8B1E1E; /* เส้นคาดสีแดงด้านบนให้รับกับธีม */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* แบ่ง 3 คอลัมน์: ซ้าย(กว้างหน่อย) - กลาง - ขวา */
+    grid-template-columns: 2fr 1fr 1fr; 
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* --- คอลัมน์ 1: ข้อมูลแบรนด์ --- */
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 20px;
+    /* เทคนิคทำให้พื้นหลังรูปโลโก้กลืนไปกับสีดำ */
+    mix-blend-mode: lighten; 
+    filter: grayscale(100%) brightness(200%); /* (Optional) ถ้าอยากให้โลโก้เป็นสีขาวล้วน */
+}
+
+.footer-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+}
+
+.address-box {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: #999;
+}
+
+.address-box i {
+    color: #d32f2f; /* ไอคอนหมุดสีแดง */
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+/* --- หัวข้อของแต่ละคอลัมน์ --- */
+.footer-col h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* เส้นขีดแดงหน้าหัวข้อ */
+.footer-col h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 20px;
+    width: 4px;
+    background-color: #d32f2f;
+    border-radius: 2px;
+}
+
+/* --- คอลัมน์ 2: เมนูลัด --- */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* เอฟเฟกต์ตอนชี้เมนู */
+.footer-links a:hover {
+    color: #fff;
+    transform: translateX(5px); /* ขยับไปขวานิดนึง */
+}
+
+/* ใส่ลูกศรเล็กๆ หน้าเมนูตอนชี้ */
+.footer-links a::before {
+    content: '\f0da'; /* รหัสไอคอนลูกศร FontAwesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    opacity: 0;
+    transition: 0.3s;
+    color: #d32f2f;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+}
+
+/* --- คอลัมน์ 3: ติดต่อเรา & Social --- */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.contact-list i {
+    width: 25px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* ปุ่ม Social Media แบบกลมสวยๆ */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* เด้งดึ๋ง */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* สีพื้นหลังของแต่ละปุ่ม */
+.social-btn.facebook { background-color: #1877F2; }
+.social-btn.line { background-color: #06C755; }
+.social-btn.instagram { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
+}
+.social-btn.tiktok { background-color: #000; border: 1px solid #333; }
+.social-btn.youtube { background-color: #FF0000; }
+
+/* เอฟเฟกต์ตอนชี้ปุ่ม Social */
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.1); /* ลอยขึ้นและขยาย */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+}
+
+/* --- แถบลิขสิทธิ์ด้านล่างสุด --- */
+.copyright-bar {
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #333;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+/* --- ปรับแต่งสำหรับมือถือ (Responsive) --- */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* เรียงลงมาเป็นแถวเดียว */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .address-box {
+        justify-content: center;
+    }
+
+    .footer-col h3 {
+        padding-left: 0;
+        display: inline-block;
+    }
+    
+    .footer-col h3::before {
+        display: none; /* ซ่อนเส้นแดงหน้าหัวข้อในมือถือ */
+    }
+    
+    .footer-links a {
+        justify-content: center;
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* ========================================= */
+/* [New] กล่องข้อความเด้ง (Popup Bubble) */
+/* ========================================= */
+
+.popup-bubble {
+    position: absolute;
+    /* จัดตำแหน่งให้อยู่ตรงจุดที่รถจะจอด (ปรับซ้ายขวาที่ตรงนี้) */
+    left: 50%; 
+    /* ความสูง: ให้ลอยอยู่เหนือรถไฟฟ้า */
+    bottom: 180px; 
+    z-index: 20; /* อยู่บนสุด */
+    
+    /* ตั้งค่าเริ่มต้น: ซ่อนไว้ก่อน */
+    transform: translateX(-50%) scale(0);
+    transform-origin: bottom center; /* ให้เด้งขยายจากด้านล่าง */
+    opacity: 0;
+
+    /* ใส่ Animation ชื่อ popupCycle (เวลา 20 วิ เท่ากับรถไฟฟ้า) */
+    animation: popupCycle 20s ease-in-out infinite;
+}
+
+/* ดีไซน์กล่องสีขาว */
+.bubble-content {
+    background-color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px; /* ขอบมนเป็นวงรี */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* เงาลอยๆ */
+    border: 2px solid #9a0007; /* เส้นขอบสีแดงธีมเว็บ */
+    text-align: center;
+    min-width: 180px;
+    position: relative;
+}
+
+/* ข้อความข้างใน */
+.bubble-title {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #9a0007; /* สีแดง */
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.bubble-sub {
+    display: block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* หางลูกศรสามเหลี่ยมชี้ลง */
+.bubble-arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid #9a0007; /* สีเดียวกับขอบ */
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* หางลูกศรสีขาวซ้อนทับ (เพื่อให้ดูเหมือนกลวง) */
+.bubble-arrow::after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid #fff;
+    position: absolute;
+    top: -12px;
+    left: -7px;
+}
+
+/* ========================================= */
+/* [แก้ไขล่าสุด] กล่องข้อความเด้ง (Popup Bubble) */
+/* ========================================= */
+
+.popup-bubble {
+    position: absolute;
+    /* จัดตำแหน่งให้อยู่ตรง "หัวขบวน" (ด้านซ้ายของรูปรถ) */
+    left: 100px; 
+    /* ความสูง: ให้ลอยอยู่เหนือหลังคารถ (รถสูง 90px ป้ายต้องสูงกว่านั้น) */
+    bottom: 110px; 
+    z-index: 20;
+    
+    /* จุดหมุนเด้ง: ให้เด้งออกจากหางลูกศร */
+    transform-origin: bottom left; 
+    
+    /* ตั้งค่าเริ่มต้น: ซ่อนไว้ */
+    transform: scale(0);
+    opacity: 0;
+
+    /* ใส่ Animation ชื่อ popupSynced (เวลา 10 วิ เท่ากับรถไฟฟ้าเป๊ะ) */
+    animation: popupSynced 10s infinite;
+}
+
+/* ดีไซน์กล่องสีขาว (คงเดิม) */
+.bubble-content {
+    background-color: #fff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 2px solid #9a0007;
+    text-align: center;
+    min-width: 160px;
+    position: relative;
+}
+
+/* ข้อความข้างใน */
+.bubble-title {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #9a0007;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.bubble-sub {
+    display: block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 10px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* หางลูกศร (ปรับให้ชี้ลงมาที่หัวรถ) */
+.bubble-arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid #9a0007;
+    position: absolute;
+    bottom: -12px;
+    /* ขยับหางมาทางซ้ายให้ตรงกับจุดกำเนิดเด้ง */
+    left: 20px; 
+}
+
+.bubble-arrow::after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid #fff;
+    position: absolute;
+    top: -12px;
+    left: -7px;
+}
+
+/* ----------------------------------------- */
+/* [Animation] จังหวะการเด้ง (ซิงค์กับรถ 100%) */
+/* รถจอดตอน 35% ถึง 60% ดังนั้นป้ายต้องเด้งช่วงนี้ */
+/* ----------------------------------------- */
+@keyframes popupSynced {
+    /* ช่วง 0-35%: รถกำลังวิ่งมา -> ป้ายซ่อน */ 
+    0%, 35% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    
+    /* ช่วง 36-38%: รถจอดสนิท -> ป้ายเด้งดึ๋งขึ้นมา! */
+    38% {
+        transform: scale(1.1); /* เด้งเกินนิดนึง */
+        opacity: 1;
+    }
+    40% {
+        transform: scale(1); /* กลับมาขนาดปกติ */
+        opacity: 1;
+    }
+    
+    /* ช่วง 40-58%: รถจอดนิ่ง -> ป้ายโชว์ค้างไว้ */
+    58% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    /* ช่วง 60%: รถเริ่มออกตัว -> ป้ายหุบลงทันที */
+    60%, 100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Responsive มือถือ */
+@media (max-width: 768px) {
+    .popup-bubble {
+        bottom: 60px; /* ลดระดับลงในมือถือ */
+        left: 10px;
+    }
+    .bubble-content {
+        min-width: 100px;
+        padding: 5px 10px;
+    }
+    .bubble-title { font-size: 14px; }
+    .bubble-sub { display: none; } /* ซ่อนตัวเล็กในมือถือ */
+}
+
+/* ========================================= */
+/* [ใหม่ล่าสุด] พุ่มไม้สไตล์ SPU (Vector Style) */
+/* ========================================= */
+
+.spu-bushes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px; /* ความสูงรวมของพุ่มไม้ */
+    z-index: 0; /* อยู่หน้ารางรถไฟ */
+    overflow: hidden;
+}
+
+.bush-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* ยาวเต็มจอ */
+    background-repeat: repeat-x; /* สั่งให้ลายพุ่มไม้ซ้ำกันไปเรื่อยๆ แนวนอน */
+}
+
+/* --- ชั้นหลัง (สีเขียวเข้ม) --- */
+.bush-strip.back {
+    height: 60px;
+    bottom: 0;
+    /* สร้างลายโค้งมนด้วยวงกลมไล่สี */
+    background-image: 
+        radial-gradient(circle at 50% 100%, #2e5d3b 25px, transparent 26px),
+        radial-gradient(circle at 50% 100%, #2e5d3b 35px, transparent 36px);
+    
+    /* ขนาดของแพทเทิร์น (กว้าง x สูง) */
+    background-size: 60px 50px, 90px 70px;
+    background-position: 0 bottom, 40px bottom; /* จัดตำแหน่งให้ซ้อนกันสวยๆ */
+    
+    /* อนิเมชั่น: โยกช้าๆ (เหมือนลมพัดพุ่มใหญ่) */
+    transform-origin: bottom center;
+    animation: bushSway 4s ease-in-out infinite alternate;
+}
+
+/* --- ชั้นหน้า (สีเขียวสด) --- */
+.bush-strip.front {
+    height: 40px;
+    bottom: -5px; /* ดึงลงนิดนึงให้ดูมีเลเยอร์ */
+    /* สร้างลายโค้งมนถี่ๆ */
+    background-image: 
+        radial-gradient(circle at 50% 100%, #538e5a 18px, transparent 19px),
+        radial-gradient(circle at 50% 100%, #538e5a 24px, transparent 25px);
+    
+    /* ขนาดแพทเทิร์น */
+    background-size: 50px 40px, 70px 50px;
+    background-position: 10px bottom, 50px bottom;
+    
+    /* อนิเมชั่น: โยกเร็วกว่านิดนึง (ยอดใบ) */
+    transform-origin: bottom center;
+    animation: bushSway 3s ease-in-out infinite alternate-reverse;
+}
+
+
+/* ==========================================================================
+   [Hamburger Menu] ปุ่มเมนูสำหรับมือถือ
+   ========================================================================== */
+.hamburger-menu {
+    display: none; /* ซ่อนใน PC */
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
 }

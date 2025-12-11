@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Pictures/Logo Y.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>WellFitBangkok │ Rajanakarn </title>
 </head>
@@ -18,7 +20,11 @@
             </a>
         </div>
 
-        <div class="nav-right">
+        <div class="hamburger-menu" onclick="toggleMobileMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="nav-right" id="nav-right">
             <ul class="menu-list">
                 <li><a href="#" id="menu-service">บริการ</a></li>
                 <li><a href="#" id="menu-promo">โปรโมชั่น</a></li>
@@ -51,7 +57,11 @@
 
     <div class="bts-zone">
         <div class="structure-pillars"></div>
-        <div class="bushes-container"></div>
+       <div class="spu-bushes">
+            <div class="bush-strip back"></div>
+            <div class="bush-strip front"></div>
+        </div>
+        
         <div class="structure-rail"></div>
         <div class="station-sign">
             <div class="sign-pole left"></div>
@@ -66,8 +76,18 @@
                 </div>
             </div>
         </div>
-        <div class="train-wrapper">
+       <div class="train-wrapper">
+            
             <img src="Pictures/BTS1.png" alt="BTS Train" class="bts-train-body">
+            
+            <div class="popup-bubble">
+                <div class="bubble-content">
+                    <span class="bubble-title">WELLFIT</span>
+                    <span class="bubble-sub">Bangkok Rajanakarn</span>
+                </div>
+                <div class="bubble-arrow"></div>
+            </div>
+
         </div>
     </div>
 
@@ -330,21 +350,106 @@
         </div>
     </section>
 
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="Pictures/Logo X.jpg" alt="WellFit Logo" style="height: 50px; mix-blend-mode: lighten;">
+                </div>
+                <p class="footer-desc" id="footer-desc">
+                    WellFit Bangkok Rajanakarn<br>
+                    ฟิตเนสครบวงจร ใจกลางสาทร<br>
+                    เดินทางสะดวก ติด BTS ช่องนนทรี
+                </p>
+                <div class="address-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="footer-addr">อาคารรัจนาการ ชั้น 8 ถนนสาทรใต้ <br>ยานนาวา สาทร กรุงเทพฯ 10120</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 id="footer-menu-head">เมนูลัด</h3>
+                <ul class="footer-links">
+                    <li><a href="#" id="ft-link-home">หน้าแรก</a></li>
+                    <li><a href="#" id="ft-link-class">คลาสออกกำลังกาย</a></li>
+                    <li><a href="#" id="ft-link-schedule">ตารางกิจกรรม</a></li>
+                    <li><a href="#" id="ft-link-register">สมัครสมาชิก</a></li>
+                    <li><a href="#" id="ft-link-policy">นโยบายความเป็นส่วนตัว</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 id="footer-contact-head">ติดต่อเรา</h3>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fa-brands fa-line" style="color: #06c755;"></i> 
+                        <span>@wellfitbangkok</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone" style="color: #fff;"></i> 
+                        <span>02-123-4567</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope" style="color: #ffcc00;"></i> 
+                        <span>info@wellfit.com</span>
+                    </li>
+                </ul>
+
+                <div class="social-icons">
+                    <a href="#" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn line"><i class="fa-brands fa-line"></i></a>
+                    <a href="#" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="copyright-bar">
+            <p>© 2025 WellFit Bangkok Rajanakarn. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
 
     <script>
+        // ==========================================
+        // ส่วนที่ 1: ตั้งค่าระบบสไลด์พื้นหลัง (Background Slider)
+        // ==========================================
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const slideInterval = 5000; // ความเร็วสไลด์ (5000 = 5 วินาที)
+
+        function nextSlide() {
+            if (slides.length > 0) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+        }
+        
+        // สั่งให้สไลด์เริ่มทำงาน
+        if (slides.length > 0) {
+            setInterval(nextSlide, slideInterval);
+        }
+
+        // ==========================================
+        // ส่วนที่ 2: ฐานข้อมูลคำศัพท์ (Translations)
+        // ==========================================
         const translations = {
             th: {
-                // --- เมนูบาร์ ---
+                // --- Navbar ---
                 service: "บริการ",
                 promo: "โปรโมชั่น",
                 price: "ราคา",
                 contact: "ติดต่อเรา",
                 register: "สมัครคอร์ส",
 
-                // --- ป้ายสถานี (ถ้าต้องการเปลี่ยนชื่อสถานีตามภาษา) ---
+                // --- Station Sign (ป้ายสถานี) ---
                 stationName: "เซนต์หลุยส์",
 
-                // --- ส่วน Pricing ---
+                // --- Pricing Section ---
                 pageTitle: "ราคาแพ็กเกจ",
                 p1Title: "รายวัน",
                 p1Desc: "เข้าใช้งานได้ 1 วัน",
@@ -380,7 +485,6 @@
                 z5Desc: "รองรับกิจกรรมโยคะ เต้น และบอดี้คอมแบท",
                 z6Title: "สระว่ายน้ำ",
                 z6Desc: "สระระบบเกลือในร่ม วิวพาโนรามา",
-                // (ถ้ามีโซน 7 เพิ่มในอนาคตก็ใส่ได้ แต่ถ้าไม่มี โค้ดใหม่จะไม่ Error ครับ)
 
                 // --- FAQ ---
                 faqHead: "คำถามที่พบบ่อย (FAQ)",
@@ -407,7 +511,18 @@
                 txtAddr: "อาคารรัจนาการ ชั้น 9 ถนนสาทรใต้<br>แขวงยานนาวา เขตสาทร กรุงเทพฯ 10120",
                 lblPhone: "เบอร์โทรศัพท์",
                 lblLine: "Line Official",
-                lblFb: "Facebook Fanpage"
+                lblFb: "Facebook Fanpage",
+
+                // --- Footer (ส่วนท้ายเว็บ) ---
+                footerDesc: "WellFit Bangkok Rajanakarn<br>ฟิตเนสครบวงจร ใจกลางสาทร<br>เดินทางสะดวก ติด BTS ช่องนนทรี",
+                footerAddr: "อาคารรัจนาการ ชั้น 8 ถนนสาทรใต้ <br>ยานนาวา สาทร กรุงเทพฯ 10120",
+                footerMenuHead: "เมนูลัด",
+                ftHome: "หน้าแรก",
+                ftClass: "คลาสออกกำลังกาย",
+                ftSchedule: "ตารางกิจกรรม",
+                ftRegister: "สมัครสมาชิก",
+                ftPolicy: "นโยบายความเป็นส่วนตัว",
+                footerContactHead: "ติดต่อเรา"
             },
             en: {
                 // --- Navbar ---
@@ -482,9 +597,24 @@
                 txtAddr: "Rajanakarn Building, 9th Floor, South Sathorn Rd,<br>Yannawa, Sathorn, Bangkok 10120",
                 lblPhone: "Phone Number",
                 lblLine: "Line Official",
-                lblFb: "Facebook Fanpage"
+                lblFb: "Facebook Fanpage",
+
+                // --- Footer ---
+                footerDesc: "WellFit Bangkok Rajanakarn<br>Full-service fitness in Sathorn<br>Convenient access near BTS Chong Nonsi",
+                footerAddr: "Rajanakarn Building, 8th Floor, South Sathorn Rd,<br>Yannawa, Sathorn, Bangkok 10120",
+                footerMenuHead: "Quick Menu",
+                ftHome: "Home",
+                ftClass: "Exercise Classes",
+                ftSchedule: "Activity Schedule",
+                ftRegister: "Membership",
+                ftPolicy: "Privacy Policy",
+                footerContactHead: "Contact Us"
             }
         };
+
+        // ==========================================
+        // ส่วนที่ 3: ฟังก์ชันสั่งเปลี่ยนภาษา
+        // ==========================================
 
         // ฟังก์ชันช่วยเปลี่ยนข้อความ (แบบปลอดภัย ไม่ Error ถ้าหา ID ไม่เจอ)
         function safeSetText(id, text) {
@@ -492,11 +622,13 @@
             if (el) el.innerText = text;
         }
 
+        // ฟังก์ชันช่วยเปลี่ยน HTML (สำหรับข้อความที่มี <br>)
         function safeSetHTML(id, html) {
             const el = document.getElementById(id);
             if (el) el.innerHTML = html;
         }
 
+        // ฟังก์ชันหลักที่ถูกเรียกเมื่อกดปุ่มธง
         function setLang(lang) {
             const t = translations[lang]; // ย่อตัวแปรให้สั้นลง
 
@@ -509,16 +641,19 @@
 
             // --- 2. Flags Active State ---
             if (lang === 'th') {
-                document.getElementById('flag-th').classList.add('active');
-                document.getElementById('flag-en').classList.remove('active');
+                const flagTh = document.getElementById('flag-th');
+                const flagEn = document.getElementById('flag-en');
+                if(flagTh) flagTh.classList.add('active');
+                if(flagEn) flagEn.classList.remove('active');
             } else {
-                document.getElementById('flag-en').classList.add('active');
-                document.getElementById('flag-th').classList.remove('active');
+                const flagTh = document.getElementById('flag-th');
+                const flagEn = document.getElementById('flag-en');
+                if(flagEn) flagEn.classList.add('active');
+                if(flagTh) flagTh.classList.remove('active');
             }
 
             // --- 3. Pricing Section ---
             safeSetText('page-title', t.pageTitle);
-
             safeSetText('p1-title', t.p1Title);
             safeSetText('p1-desc', t.p1Desc);
             safeSetText('p1-period', t.p1Period);
@@ -545,9 +680,8 @@
 
             // --- 4. Service Zone ---
             safeSetText('service-head', t.serviceTitle);
-            // วนลูปแปลโซน 1-7 (แต่ถ้ามีแค่ 6 ก็จะไม่ Error เพราะใช้ safeSetText)
             for (let i = 1; i <= 7; i++) {
-                if (t[`z${i}Title`]) { // เช็คก่อนว่ามีคำแปลไหม
+                if (t[`z${i}Title`]) { 
                     safeSetText(`z${i}-title`, t[`z${i}Title`]);
                     safeSetText(`z${i}-desc`, t[`z${i}Desc`]);
                 }
@@ -555,17 +689,13 @@
 
             // --- 5. FAQ Section ---
             safeSetText('faq-head', t.faqHead);
-
             safeSetText('q1-head', t.q1Head);
             safeSetText('q1-desc1', t.q1Desc1);
             safeSetText('q1-desc2', t.q1Desc2);
             safeSetText('q1-desc3', t.q1Desc3);
-
             safeSetText('q2-head', t.q2Head);
             safeSetText('q2-desc', t.q2Desc);
-
             safeSetText('q3-head', t.q3Head);
-            // วนลูปแปลจุดเด่น 7 ข้อ
             for (let i = 1; i <= 7; i++) {
                 safeSetText(`hl-${i}`, t[`hl${i}`]);
             }
@@ -574,18 +704,47 @@
             safeSetText('ct-head', t.ctHead);
             safeSetText('ct-sub', t.ctSub);
             safeSetText('ct-info-title', t.ctInfoTitle);
-
             safeSetText('lbl-addr', t.lblAddr);
             safeSetHTML('txt-addr', t.txtAddr); // ใช้ HTML เพราะมี <br>
-
             safeSetText('lbl-phone', t.lblPhone);
             safeSetText('lbl-line', t.lblLine);
             safeSetText('lbl-fb', t.lblFb);
+
+            // --- 7. Footer (ส่วนท้ายเว็บ) ---
+            safeSetHTML('footer-desc', t.footerDesc);
+            safeSetHTML('footer-addr', t.footerAddr);
+            safeSetText('footer-menu-head', t.footerMenuHead);
+            safeSetText('ft-link-home', t.ftHome);
+            safeSetText('ft-link-class', t.ftClass);
+            safeSetText('ft-link-schedule', t.ftSchedule);
+            safeSetText('ft-link-register', t.ftRegister);
+            safeSetText('ft-link-policy', t.ftPolicy);
+            safeSetText('footer-contact-head', t.footerContactHead);
         }
 
         // ฟังก์ชันช่วยอัปเดต Element หลายตัวที่มี Class เดียวกัน
         function updateFeatures(className, text) {
             const elements = document.querySelectorAll('.' + className);
             elements.forEach(el => el.innerText = text);
+        }
+
+        // ==========================================
+        // ส่วนที่ 4: ฟังก์ชัน Hamburger Menu (มือถือ)
+        // ==========================================
+        function toggleMobileMenu() {
+            const navRight = document.getElementById('nav-right');
+            const hamburgerIcon = document.querySelector('.hamburger-menu i');
+            
+            // สลับคลาส active เพื่อยืด/หดเมนู
+            navRight.classList.toggle('active');
+            
+            // เปลี่ยนไอคอน (ขีด 3 ขีด <-> กากบาท)
+            if (navRight.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-xmark');
+            } else {
+                hamburgerIcon.classList.remove('fa-xmark');
+                hamburgerIcon.classList.add('fa-bars');
+            }
         }
     </script>
